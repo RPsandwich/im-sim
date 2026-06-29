@@ -1,24 +1,27 @@
 [gd_scene format=3 uid="uid://clb0w52e7scdt"]
 
 [ext_resource type="PackedScene" uid="uid://cmivt8nc28r2n" path="res://player.tscn" id="1_f3sb7"]
+[ext_resource type="Texture2D" uid="uid://d2x3raxa4cvyp" path="res://textures/PaintedPlaster015_1K-JPG_Color.jpg" id="1_fj7yv"]
+[ext_resource type="Texture2D" uid="uid://r6kchads0h4o" path="res://textures/Carpet015_1K-JPG_Color.jpg" id="1_tlwt5"]
+[ext_resource type="Texture2D" uid="uid://blb7j3fvjulmb" path="res://textures/OfficeCeiling001_1K-JPG_Color.jpg" id="2_aqk2v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
-albedo_color = Color(0.38413846, 0.18629909, 0.07648214, 1)
+albedo_texture = ExtResource("1_tlwt5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
-albedo_color = Color(0.25975117, 0.11661548, 0.04705113, 1)
+albedo_texture = ExtResource("2_aqk2v")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlwt5"]
-albedo_color = Color(0, 0.5749815, 0.57514805, 1)
+albedo_texture = ExtResource("1_fj7yv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
-albedo_color = Color(1, 0.44705883, 1, 1)
+albedo_texture = ExtResource("1_fj7yv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_036b0"]
-albedo_color = Color(1, 1, 0.5411765, 1)
+albedo_texture = ExtResource("1_fj7yv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwbse"]
-albedo_color = Color(0.24919063, 0.117554046, 0.6038787, 1)
+albedo_texture = ExtResource("1_fj7yv")
 
 [sub_resource type="Environment" id="Environment_f3sb7"]
 ambient_light_color = Color(1, 1, 1, 1)
@@ -32,7 +35,7 @@ size = Vector3(10, 0.2, 10)
 material = SubResource("StandardMaterial3D_f3sb7")
 
 [node name="Ceiling" type="CSGBox3D" parent="." unique_id=1470881541]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 use_collision = true
 size = Vector3(10, 0.2, 10)
 material = SubResource("StandardMaterial3D_fj7yv")
@@ -65,8 +68,10 @@ material = SubResource("StandardMaterial3D_dwbse")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1341646101]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-light_energy = 2.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2994585, 0)
+light_color = Color(1, 0.78431374, 0.39215687, 1)
+light_energy = 3.0
+omni_range = 15.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=469424794]
 environment = SubResource("Environment_f3sb7")
