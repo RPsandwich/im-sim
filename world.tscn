@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://clb0w52e7scdt"]
+
+[ext_resource type="PackedScene" uid="uid://cmivt8nc28r2n" path="res://player.tscn" id="1_f3sb7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
+albedo_color = Color(0.38413846, 0.18629909, 0.07648214, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
+albedo_color = Color(0.25975117, 0.11661548, 0.04705113, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlwt5"]
+albedo_color = Color(0, 0.5749815, 0.57514805, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
+albedo_color = Color(1, 0.44705883, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_036b0"]
+albedo_color = Color(1, 1, 0.5411765, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwbse"]
+albedo_color = Color(0.24919063, 0.117554046, 0.6038787, 1)
+
+[sub_resource type="Environment" id="Environment_f3sb7"]
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="World" type="Node3D" unique_id=1620539426]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=1955923559]
+use_collision = true
+flip_faces = true
+size = Vector3(10, 0.2, 10)
+material = SubResource("StandardMaterial3D_f3sb7")
+
+[node name="Ceiling" type="CSGBox3D" parent="." unique_id=1470881541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+use_collision = true
+size = Vector3(10, 0.2, 10)
+material = SubResource("StandardMaterial3D_fj7yv")
+
+[node name="Wall_North" type="CSGBox3D" parent="." unique_id=2087164698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -5)
+use_collision = true
+size = Vector3(10, 10, 0.2)
+material = SubResource("StandardMaterial3D_tlwt5")
+
+[node name="Wall_South" type="CSGBox3D" parent="." unique_id=2091075509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5)
+use_collision = true
+size = Vector3(10, 10, 0.2)
+material = SubResource("StandardMaterial3D_aqk2v")
+
+[node name="Wall_East" type="CSGBox3D" parent="." unique_id=1897617637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 0)
+use_collision = true
+size = Vector3(0.2, 10, 10)
+material = SubResource("StandardMaterial3D_036b0")
+
+[node name="Wall_West" type="CSGBox3D" parent="." unique_id=921311674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 0)
+use_collision = true
+size = Vector3(0.2, 10, 10)
+material = SubResource("StandardMaterial3D_dwbse")
+
+[node name="Player" parent="." unique_id=1744863859 instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1341646101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+light_energy = 2.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=469424794]
+environment = SubResource("Environment_f3sb7")
