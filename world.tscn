@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d2x3raxa4cvyp" path="res://textures/PaintedPlaster015_1K-JPG_Color.jpg" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://r6kchads0h4o" path="res://textures/Carpet015_1K-JPG_Color.jpg" id="1_tlwt5"]
 [ext_resource type="Texture2D" uid="uid://blb7j3fvjulmb" path="res://textures/OfficeCeiling001_1K-JPG_Color.jpg" id="2_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://d1q3622j2d1i5" path="res://textures/Fabric001_1K-JPG_Color.jpg" id="6_dwbse"]
+[ext_resource type="Texture2D" uid="uid://4jcqe34ky2l6" path="res://textures/Wood067_1K-JPG_Color.jpg" id="6_pkg7o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
 albedo_texture = ExtResource("1_tlwt5")
@@ -25,6 +27,15 @@ albedo_texture = ExtResource("1_fj7yv")
 
 [sub_resource type="Environment" id="Environment_f3sb7"]
 ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ioo17"]
+albedo_texture = ExtResource("6_dwbse")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ic0uy"]
+albedo_texture = ExtResource("6_pkg7o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wse8f"]
+albedo_texture = ExtResource("6_dwbse")
 
 [node name="World" type="Node3D" unique_id=1620539426]
 
@@ -75,3 +86,18 @@ omni_range = 15.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=469424794]
 environment = SubResource("Environment_f3sb7")
+
+[node name="Bed_Mattress" type="CSGBox3D" parent="." unique_id=1983291514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 2.401349)
+size = Vector3(3, 0.5, 5)
+material = SubResource("StandardMaterial3D_ioo17")
+
+[node name="Bed_Headboard" type="CSGBox3D" parent="." unique_id=1923345909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.8097396)
+size = Vector3(3, 1.5, 0.2)
+material = SubResource("StandardMaterial3D_ic0uy")
+
+[node name="Bed_Pillow" type="CSGSphere3D" parent="." unique_id=120760285]
+transform = Transform3D(1.2, 0, 0, 0, 0.3, 0, 0, 0, 0.6, 0, 0.76286817, 4.2403164)
+radius = 1.0
+material = SubResource("StandardMaterial3D_wse8f")
