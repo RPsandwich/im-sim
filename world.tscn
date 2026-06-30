@@ -73,20 +73,24 @@ albedo_texture = ExtResource("6_pkg7o")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2u3nc"]
 albedo_texture = ExtResource("11_ic0uy")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udxuc"]
+albedo_color = Color(0.7204674, 0.7204675, 0.7204674, 1)
+albedo_texture = ExtResource("9_ioo17")
+
 [node name="World" type="Node3D" unique_id=1620539426]
 
 [node name="Room_Shell" type="Node3D" parent="." unique_id=1603456740]
 
 [node name="Wall_North" type="CSGBox3D" parent="Room_Shell" unique_id=2087164698]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -5)
 use_collision = true
-size = Vector3(10, 10, 0.2)
+size = Vector3(10, 5, 0.2)
 material = SubResource("StandardMaterial3D_tlwt5")
 
 [node name="Wall_South" type="CSGBox3D" parent="Room_Shell" unique_id=2091075509]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 5)
 use_collision = true
-size = Vector3(10, 10, 0.2)
+size = Vector3(10, 5, 0.2)
 material = SubResource("StandardMaterial3D_aqk2v")
 
 [node name="Wall_East_Big" type="CSGBox3D" parent="Room_Shell" unique_id=1897617637]
@@ -108,9 +112,9 @@ size = Vector3(0.2, 1.5079346, 2.140564)
 material = SubResource("StandardMaterial3D_036b0")
 
 [node name="Wall_West" type="CSGBox3D" parent="Room_Shell" unique_id=921311674]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, 0)
 use_collision = true
-size = Vector3(0.2, 10, 10)
+size = Vector3(0.2, 5, 10)
 material = SubResource("StandardMaterial3D_dwbse")
 
 [node name="Floor" type="CSGBox3D" parent="Room_Shell" unique_id=1955923559]
@@ -208,3 +212,8 @@ material = SubResource("StandardMaterial3D_hiqwa")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.852263, 2.792934, -0.00020766258)
 size = Vector3(0.1, 2.9, 1.9)
 material = SubResource("StandardMaterial3D_2u3nc")
+
+[node name="Safe" type="CSGBox3D" parent="." unique_id=1036851698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9991574, 2.764196, 0)
+size = Vector3(0.2, 1, 1.2)
+material = SubResource("StandardMaterial3D_udxuc")
