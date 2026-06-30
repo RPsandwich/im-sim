@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://b6xufqe58dj4j" path="res://textures/rough_linen_diff_1k.jpg" id="5_036b0"]
 [ext_resource type="Texture2D" uid="uid://d1q3622j2d1i5" path="res://textures/Fabric001_1K-JPG_Color.jpg" id="6_dwbse"]
 [ext_resource type="Texture2D" uid="uid://4jcqe34ky2l6" path="res://textures/Wood067_1K-JPG_Color.jpg" id="6_pkg7o"]
-[ext_resource type="Texture2D" uid="uid://dbnen77ytg4m7" path="res://textures/Wood017_1K-JPG_Color.jpg" id="7_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://b62n6jr5qwn8a" path="res://textures/Metal011_1K-JPG_Color.jpg" id="9_ioo17"]
 [ext_resource type="Texture2D" uid="uid://byoa81iiennpi" path="res://textures/Leather026_1K-JPG_Color.jpg" id="10_wse8f"]
 [ext_resource type="Texture2D" uid="uid://clw3bkfmdmv01" path="res://textures/tandg.jpg" id="11_ic0uy"]
@@ -59,7 +58,7 @@ emission_energy_multiplier = 1.5
 ambient_light_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kq25h"]
-albedo_texture = ExtResource("7_pkg7o")
+albedo_texture = ExtResource("6_pkg7o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3n1d"]
 albedo_texture = ExtResource("6_pkg7o")
@@ -67,17 +66,39 @@ albedo_texture = ExtResource("6_pkg7o")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgpkr"]
 albedo_texture = ExtResource("10_wse8f")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiqwa"]
-albedo_texture = ExtResource("6_pkg7o")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2u3nc"]
 albedo_texture = ExtResource("11_ic0uy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiqwa"]
+albedo_texture = ExtResource("6_pkg7o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udxuc"]
 albedo_color = Color(0.7204674, 0.7204675, 0.7204674, 1)
 albedo_texture = ExtResource("9_ioo17")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8wql"]
+albedo_texture = ExtResource("6_pkg7o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ikiii"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26xuy"]
+emission_enabled = true
+emission = Color(0, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbp6q"]
+albedo_color = Color(0, 0, 0, 1)
+
 [node name="World" type="Node3D" unique_id=1620539426]
+
+[node name="Player" parent="." unique_id=1744863859 instance=ExtResource("1_f3sb7")]
+transform = Transform3D(-0.53877074, 0, -0.8424524, 0, 1, 0, 0.8424524, 0, -0.53877074, -3.4395475, 0.94880223, -3.3232818)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1341646101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2201574, 1.7462566, 4.3234096)
+light_color = Color(0.99999994, 0.850634, 0.5968582, 1)
+light_energy = 3.0
+omni_range = 15.0
 
 [node name="Room_Shell" type="Node3D" parent="." unique_id=1603456740]
 
@@ -171,15 +192,6 @@ radius = 0.35
 height = 0.4
 material = SubResource("StandardMaterial3D_70uel")
 
-[node name="Player" parent="." unique_id=1744863859 instance=ExtResource("1_f3sb7")]
-transform = Transform3D(-0.53877074, 0, -0.8424524, 0, 1, 0, 0.8424524, 0, -0.53877074, -1.878183, 0.94880223, -3.3232818)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1341646101]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2201574, 1.7462566, 4.3234096)
-light_color = Color(0.99999994, 0.850634, 0.5968582, 1)
-light_energy = 3.0
-omni_range = 15.0
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=469424794]
 environment = SubResource("Environment_f3sb7")
 
@@ -203,17 +215,47 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2513518, 1.00411, 4.3405128
 size = Vector3(0.4, 0.15, 0.55)
 material = SubResource("StandardMaterial3D_wgpkr")
 
-[node name="Painting_Frame" type="CSGBox3D" parent="." unique_id=1019234583]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.855034, 2.800113, 0)
-size = Vector3(0.1, 2, 3)
-material = SubResource("StandardMaterial3D_hiqwa")
-
 [node name="Painting_Canvas" type="CSGBox3D" parent="." unique_id=1509094444]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.852263, 2.792934, -0.00020766258)
 size = Vector3(0.1, 2.9, 1.9)
 material = SubResource("StandardMaterial3D_2u3nc")
 
+[node name="Painting_Frame" type="CSGBox3D" parent="Painting_Canvas" unique_id=1019234583]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.0027709007, -0.0002076629, 0.007179022)
+size = Vector3(0.1, 2, 3)
+material = SubResource("StandardMaterial3D_hiqwa")
+
 [node name="Safe" type="CSGBox3D" parent="." unique_id=1036851698]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9991574, 2.764196, 0)
 size = Vector3(0.2, 1, 1.2)
 material = SubResource("StandardMaterial3D_udxuc")
+
+[node name="Dresser" type="CSGBox3D" parent="." unique_id=516601387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9987483, -4.456111)
+size = Vector3(4, 2, 1)
+material = SubResource("StandardMaterial3D_v8wql")
+
+[node name="Drawer_2" type="CSGBox3D" parent="Dresser" unique_id=823653989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48449183, 0.09288406)
+size = Vector3(3.7, 0.5, 1)
+material = SubResource("StandardMaterial3D_v8wql")
+
+[node name="Drawer_1" type="CSGBox3D" parent="Dresser" unique_id=2106260015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5155082, 0.09288406)
+size = Vector3(3.7, 0.5, 1)
+material = SubResource("StandardMaterial3D_v8wql")
+
+[node name="TV" type="CSGBox3D" parent="." unique_id=1194068809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8567219, -4.4415827)
+size = Vector3(2, 1.3, 0.15)
+material = SubResource("StandardMaterial3D_ikiii")
+
+[node name="TV_Screen" type="CSGBox3D" parent="TV" unique_id=662327893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.014391899)
+size = Vector3(1.8596191, 1.1748047, 0.15)
+material = SubResource("StandardMaterial3D_26xuy")
+
+[node name="TV_Base" type="CSGBox3D" parent="TV" unique_id=1334260745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.72626567, 0.0037527084)
+size = Vector3(1, 0.2, 0.08984375)
+material = SubResource("StandardMaterial3D_cbp6q")
