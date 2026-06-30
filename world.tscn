@@ -8,12 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://d1q3622j2d1i5" path="res://textures/Fabric001_1K-JPG_Color.jpg" id="6_dwbse"]
 [ext_resource type="Texture2D" uid="uid://4jcqe34ky2l6" path="res://textures/Wood067_1K-JPG_Color.jpg" id="6_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://dbnen77ytg4m7" path="res://textures/Wood017_1K-JPG_Color.jpg" id="7_pkg7o"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
-albedo_texture = ExtResource("1_tlwt5")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
-albedo_texture = ExtResource("1_fj7yv")
+[ext_resource type="Texture2D" uid="uid://b62n6jr5qwn8a" path="res://textures/Metal011_1K-JPG_Color.jpg" id="9_ioo17"]
+[ext_resource type="Texture2D" uid="uid://byoa81iiennpi" path="res://textures/Leather026_1K-JPG_Color.jpg" id="10_wse8f"]
+[ext_resource type="Texture2D" uid="uid://clw3bkfmdmv01" path="res://textures/tandg.jpg" id="11_ic0uy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlwt5"]
 albedo_texture = ExtResource("2_pkg7o")
@@ -27,76 +24,154 @@ albedo_texture = ExtResource("2_pkg7o")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwbse"]
 albedo_texture = ExtResource("2_pkg7o")
 
-[sub_resource type="Environment" id="Environment_f3sb7"]
-ambient_light_color = Color(1, 1, 1, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
+albedo_texture = ExtResource("1_tlwt5")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ioo17"]
-albedo_texture = ExtResource("5_036b0")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ic0uy"]
-albedo_texture = ExtResource("6_pkg7o")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
+albedo_texture = ExtResource("1_fj7yv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wse8f"]
 albedo_texture = ExtResource("6_dwbse")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ioo17"]
+albedo_texture = ExtResource("5_036b0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mskic"]
+albedo_texture = ExtResource("6_pkg7o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ic0uy"]
+albedo_texture = ExtResource("6_pkg7o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o6r5"]
+albedo_texture = ExtResource("9_ioo17")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65fxx"]
+albedo_texture = ExtResource("9_ioo17")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70uel"]
+transparency = 1
+albedo_texture = ExtResource("6_dwbse")
+emission_enabled = true
+emission = Color(1, 1, 0.7490196, 1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="Environment" id="Environment_f3sb7"]
+ambient_light_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kq25h"]
 albedo_texture = ExtResource("7_pkg7o")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3n1d"]
+albedo_texture = ExtResource("6_pkg7o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgpkr"]
+albedo_texture = ExtResource("10_wse8f")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiqwa"]
+albedo_texture = ExtResource("6_pkg7o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2u3nc"]
+albedo_texture = ExtResource("11_ic0uy")
+
 [node name="World" type="Node3D" unique_id=1620539426]
 
-[node name="Floor" type="CSGBox3D" parent="." unique_id=1955923559]
-use_collision = true
-flip_faces = true
-size = Vector3(10, 0.2, 10)
-material = SubResource("StandardMaterial3D_f3sb7")
+[node name="Room_Shell" type="Node3D" parent="." unique_id=1603456740]
 
-[node name="Ceiling" type="CSGBox3D" parent="." unique_id=1470881541]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-use_collision = true
-size = Vector3(10, 0.2, 10)
-material = SubResource("StandardMaterial3D_fj7yv")
-
-[node name="Wall_North" type="CSGBox3D" parent="." unique_id=2087164698]
+[node name="Wall_North" type="CSGBox3D" parent="Room_Shell" unique_id=2087164698]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -5)
 use_collision = true
 size = Vector3(10, 10, 0.2)
 material = SubResource("StandardMaterial3D_tlwt5")
 
-[node name="Wall_South" type="CSGBox3D" parent="." unique_id=2091075509]
+[node name="Wall_South" type="CSGBox3D" parent="Room_Shell" unique_id=2091075509]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5)
 use_collision = true
 size = Vector3(10, 10, 0.2)
 material = SubResource("StandardMaterial3D_aqk2v")
 
-[node name="Wall_East_Big" type="CSGBox3D" parent="." unique_id=1897617637]
+[node name="Wall_East_Big" type="CSGBox3D" parent="Room_Shell" unique_id=1897617637]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 1.9411712)
 use_collision = true
 size = Vector3(0.2, 5, 6)
 material = SubResource("StandardMaterial3D_036b0")
 
-[node name="Wall_East_SmallBig2" type="CSGBox3D" parent="." unique_id=588012576]
+[node name="Wall_East_SmallBig2" type="CSGBox3D" parent="Room_Shell" unique_id=588012576]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -4.058829)
 use_collision = true
 size = Vector3(0.2, 5, 2)
 material = SubResource("StandardMaterial3D_036b0")
 
-[node name="Wall_East_SmallBig3" type="CSGBox3D" parent="." unique_id=2040824467]
+[node name="Wall_East_SmallBig3" type="CSGBox3D" parent="Room_Shell" unique_id=2040824467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.2460327, -2.0628266)
 use_collision = true
 size = Vector3(0.2, 1.5079346, 2.140564)
 material = SubResource("StandardMaterial3D_036b0")
 
-[node name="Wall_West" type="CSGBox3D" parent="." unique_id=921311674]
+[node name="Wall_West" type="CSGBox3D" parent="Room_Shell" unique_id=921311674]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5, 0)
 use_collision = true
 size = Vector3(0.2, 10, 10)
 material = SubResource("StandardMaterial3D_dwbse")
 
+[node name="Floor" type="CSGBox3D" parent="Room_Shell" unique_id=1955923559]
+use_collision = true
+flip_faces = true
+size = Vector3(10, 0.2, 10)
+material = SubResource("StandardMaterial3D_f3sb7")
+
+[node name="Ceiling" type="CSGBox3D" parent="Room_Shell" unique_id=1470881541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+use_collision = true
+size = Vector3(10, 0.2, 10)
+material = SubResource("StandardMaterial3D_fj7yv")
+
+[node name="Bed" type="Node3D" parent="." unique_id=98737330]
+
+[node name="Bed_Pillow" type="CSGSphere3D" parent="Bed" unique_id=120760285]
+transform = Transform3D(1.2, 0, 0, 0, 0.3, 0, 0, 0, 0.6, 0, 0.9860647, 4.2403164)
+radius = 1.0
+material = SubResource("StandardMaterial3D_wse8f")
+
+[node name="Bed_Mattress" type="CSGBox3D" parent="Bed" unique_id=1983291514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4731965, 2.401349)
+size = Vector3(3, 0.5, 5)
+material = SubResource("StandardMaterial3D_ioo17")
+
+[node name="Bed_Frame" type="CSGBox3D" parent="Bed" unique_id=1724332464]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 2.352765)
+size = Vector3(3.1000001, 0.5, 5.097168)
+material = SubResource("StandardMaterial3D_mskic")
+
+[node name="Bed_Headboard" type="CSGBox3D" parent="Bed" unique_id=1923345909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8757324, 4.8097396)
+size = Vector3(3.1875, 1.7485352, 0.2)
+material = SubResource("StandardMaterial3D_ic0uy")
+
+[node name="Lamp" type="Node3D" parent="." unique_id=115731457]
+
+[node name="Lamp_Base" type="CSGCylinder3D" parent="Lamp" unique_id=1618276567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2505639, 0.9837152, 4.3352356)
+radius = 0.25
+height = 0.1
+material = SubResource("StandardMaterial3D_2o6r5")
+
+[node name="Lamp_Pole" type="CSGCylinder3D" parent="Lamp" unique_id=366933048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2433467, 1.4383327, 4.3282027)
+radius = 0.05
+height = 0.8
+material = SubResource("StandardMaterial3D_65fxx")
+
+[node name="Lamp_Shade" type="CSGCylinder3D" parent="Lamp" unique_id=1995254971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2433467, 1.8086349, 4.3282027)
+radius = 0.35
+height = 0.4
+material = SubResource("StandardMaterial3D_70uel")
+
 [node name="Player" parent="." unique_id=1744863859 instance=ExtResource("1_f3sb7")]
 transform = Transform3D(-0.53877074, 0, -0.8424524, 0, 1, 0, 0.8424524, 0, -0.53877074, -1.878183, 0.94880223, -3.3232818)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1341646101]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2994585, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2201574, 1.7462566, 4.3234096)
 light_color = Color(0.99999994, 0.850634, 0.5968582, 1)
 light_energy = 3.0
 omni_range = 15.0
@@ -104,22 +179,32 @@ omni_range = 15.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=469424794]
 environment = SubResource("Environment_f3sb7")
 
-[node name="Bed_Mattress" type="CSGBox3D" parent="." unique_id=1983291514]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 2.401349)
-size = Vector3(3, 0.5, 5)
-material = SubResource("StandardMaterial3D_ioo17")
-
-[node name="Bed_Headboard" type="CSGBox3D" parent="." unique_id=1923345909]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8757324, 4.8097396)
-size = Vector3(3.1875, 1.7485352, 0.2)
-material = SubResource("StandardMaterial3D_ic0uy")
-
-[node name="Bed_Pillow" type="CSGSphere3D" parent="." unique_id=120760285]
-transform = Transform3D(1.2, 0, 0, 0, 0.3, 0, 0, 0, 0.6, 0, 0.76286817, 4.2403164)
-radius = 1.0
-material = SubResource("StandardMaterial3D_wse8f")
-
 [node name="Door" type="CSGBox3D" parent="." unique_id=1175837534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.7438098, -2.0623744)
 size = Vector3(0.15, 3.4721375, 1.9665039)
 material = SubResource("StandardMaterial3D_kq25h")
+
+[node name="Nightstand_R" type="CSGBox3D" parent="." unique_id=198563913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2260005, 0.42435098, 4.391383)
+size = Vector3(1.2, 1, 1.2)
+material = SubResource("StandardMaterial3D_k3n1d")
+
+[node name="Nightstand_L2" type="CSGBox3D" parent="." unique_id=1705797126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2127473, 0.42435098, 4.391383)
+size = Vector3(1.2, 1, 1.2)
+material = SubResource("StandardMaterial3D_k3n1d")
+
+[node name="Bible" type="CSGBox3D" parent="." unique_id=1006641102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2513518, 1.00411, 4.3405128)
+size = Vector3(0.4, 0.15, 0.55)
+material = SubResource("StandardMaterial3D_wgpkr")
+
+[node name="Painting_Frame" type="CSGBox3D" parent="." unique_id=1019234583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.855034, 2.800113, 0)
+size = Vector3(0.1, 2, 3)
+material = SubResource("StandardMaterial3D_hiqwa")
+
+[node name="Painting_Canvas" type="CSGBox3D" parent="." unique_id=1509094444]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.852263, 2.792934, -0.00020766258)
+size = Vector3(0.1, 2.9, 1.9)
+material = SubResource("StandardMaterial3D_2u3nc")
