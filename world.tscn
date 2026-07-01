@@ -12,7 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://cevhulnaiskpa" path="res://textures/BEIGEImage__GZT8_v3.jpg" id="11_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://clw3bkfmdmv01" path="res://textures/tandg.jpg" id="11_ic0uy"]
 [ext_resource type="Texture2D" uid="uid://b0svtntgvxrqb" path="res://textures/Fabric022_1K-JPG_Color.jpg" id="11_k3n1d"]
+[ext_resource type="Texture2D" uid="uid://4tqk0guyiqvq" path="res://textures/bible_cover_rotated.png" id="12_2u3nc"]
 [ext_resource type="Texture2D" uid="uid://dq0y8rv1gsy2o" path="res://textures/Metal029_1K-JPG_Color.jpg" id="13_2o6r5"]
+[ext_resource type="Texture2D" uid="uid://d01giqufadwme" path="res://textures/photo-metal-texture-pattern.jpg" id="14_hiqwa"]
+[ext_resource type="Texture2D" uid="uid://d15pc37vi2p28" path="res://textures/zip.jpg" id="15_2u3nc"]
 
 [sub_resource type="Environment" id="Environment_f3sb7"]
 ambient_light_color = Color(1, 1, 1, 1)
@@ -86,6 +89,10 @@ albedo_texture = ExtResource("6_pkg7o")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgpkr"]
 albedo_texture = ExtResource("10_wse8f")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3ebs"]
+albedo_texture = ExtResource("12_2u3nc")
+uv1_scale = Vector3(1, -1, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2u3nc"]
 albedo_texture = ExtResource("11_ic0uy")
 
@@ -123,7 +130,11 @@ albedo_texture = ExtResource("13_2o6r5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxurf"]
 albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
-albedo_texture = ExtResource("10_wse8f")
+albedo_texture = ExtResource("14_hiqwa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4h6ng"]
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("15_2u3nc")
 
 [node name="World" type="Node3D" unique_id=1620539426]
 
@@ -326,6 +337,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2513518, 1.00411, 4.3405128
 size = Vector3(0.4, 0.15, 0.55)
 material = SubResource("StandardMaterial3D_wgpkr")
 
+[node name="Bible2" type="CSGBox3D" parent="." unique_id=1420856839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2513518, 1.0906206, 4.3405128)
+size = Vector3(0.4, 0.008471683, 0.55)
+material = SubResource("StandardMaterial3D_o3ebs")
+
 [node name="Painting_Canvas" type="CSGBox3D" parent="." unique_id=1509094444]
 transform = Transform3D(-0.0064276964, 0.5999959, 2.6226298e-08, 0, -2.6227193e-08, 0.6, 1.0025439, 0.0038468055, 1.6814497e-10, -3.3383558, 2.7256467, -4.8426933)
 size = Vector3(0.1, 2.9, 1.9)
@@ -403,3 +419,8 @@ material = SubResource("StandardMaterial3D_il2jm")
 transform = Transform3D(-4.371139e-08, 0.8, 0, -1, -3.4969112e-08, 0, 0, 0, 0.8, 4.5212536, 1.0497973, 2.4902706)
 size = Vector3(0.3, 0.8, 1.5)
 material = SubResource("StandardMaterial3D_fxurf")
+
+[node name="Suitcase2" type="CSGBox3D" parent="." unique_id=1483287194]
+transform = Transform3D(-1.0278141e-08, 0.79999995, 0, -0.23513645, -3.496911e-08, 0, 0, 0, 0.8, 4.5212536, 1.0497973, 2.4902706)
+size = Vector3(0.3, 0.8330078, 1.5458984)
+material = SubResource("StandardMaterial3D_4h6ng")
