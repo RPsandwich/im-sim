@@ -139,6 +139,9 @@ albedo_texture = ExtResource("15_2u3nc")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k83mh"]
 albedo_texture = ExtResource("6_pkg7o")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qktwf"]
+albedo_texture = ExtResource("6_pkg7o")
+
 [node name="World" type="Node3D" unique_id=1620539426]
 
 [node name="Player" parent="." unique_id=1744863859 instance=ExtResource("1_f3sb7")]
@@ -432,25 +435,98 @@ material = SubResource("StandardMaterial3D_4h6ng")
 
 [node name="Desk_Top" type="CSGBox3D" parent="Desk" unique_id=1376413626]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603446, 1.637697, 3.3545928)
+use_collision = true
 size = Vector3(0.6, 0.15, 3.0909424)
 material = SubResource("StandardMaterial3D_k83mh")
 
 [node name="Desk_leg_L" type="CSGBox3D" parent="Desk" unique_id=145849312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3536325, 0.815, 4.838112)
+use_collision = true
 size = Vector3(0.1, 1.63, 0.1)
 material = SubResource("StandardMaterial3D_k83mh")
 
 [node name="Desk_leg_L2" type="CSGBox3D" parent="Desk" unique_id=139823960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.812373, 0.815, 4.838112)
+use_collision = true
 size = Vector3(0.1, 1.63, 0.1)
 material = SubResource("StandardMaterial3D_k83mh")
 
 [node name="Desk_leg_R" type="CSGBox3D" parent="Desk" unique_id=8091135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3536325, 0.815, 1.8780603)
+use_collision = true
 size = Vector3(0.1, 1.63, 0.1)
 material = SubResource("StandardMaterial3D_k83mh")
 
 [node name="Desk_leg_R2" type="CSGBox3D" parent="Desk" unique_id=498875883]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.849112, 0.815, 1.8780603)
+use_collision = true
 size = Vector3(0.1, 1.63, 0.1)
 material = SubResource("StandardMaterial3D_k83mh")
+
+[node name="Chair" type="Node3D" parent="." unique_id=1404389750]
+
+[node name="Chair_Seat" type="CSGBox3D" parent="Chair" unique_id=1778513456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.78669, 0.8624364, 3.4898677)
+use_collision = true
+size = Vector3(1, 0.15, 1)
+material = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Chair_Back_1" type="CSGBox3D" parent="Chair" unique_id=1889651794]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -3.3156683, 1.4086202, 3.9605098)
+use_collision = true
+size = Vector3(1.2, 0.053027347, 0.05871582)
+material = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Chair_Back_2" type="CSGBox3D" parent="Chair" unique_id=262004986]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -3.3156683, 1.4086202, 3.487905)
+use_collision = true
+size = Vector3(1.2, 0.053027347, 0.05871582)
+material = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Chair_Back_3" type="CSGBox3D" parent="Chair" unique_id=1096717156]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -3.3156683, 1.4086202, 3.7225873)
+use_collision = true
+size = Vector3(1.2, 0.053027347, 0.05871582)
+material = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Chair_Back_4" type="CSGBox3D" parent="Chair" unique_id=967727940]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -3.3156683, 1.4086202, 3.238371)
+use_collision = true
+size = Vector3(1.2, 0.053027347, 0.05871582)
+material = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Chair_Back_5" type="CSGBox3D" parent="Chair" unique_id=1899140348]
+transform = Transform3D(-4.371139e-08, 1, 0, 4.371139e-08, 1.9106855e-15, 1, 1, 4.371139e-08, -4.371139e-08, -3.3156683, 1.9810683, 3.4916964)
+use_collision = true
+size = Vector3(0.975, 0.053027347, 0.05871582)
+material = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Chair_Back_6" type="CSGBox3D" parent="Chair" unique_id=107757868]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -1.6420282e-15, 1, -3.3156683, 1.4086202, 3.0287561)
+use_collision = true
+size = Vector3(1.2, 0.053027347, 0.05871582)
+material = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Chair_Leg_1" type="CSGBox3D" parent="Chair" unique_id=1706496987]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -3.325605, 0.36290094, 3.036477)
+use_collision = true
+size = Vector3(0.9147461, 0.07290039, 0.074157715)
+material = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Chair_Leg_2" type="CSGBox3D" parent="Chair" unique_id=1329941852]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -3.325605, 0.36290094, 3.9457011)
+use_collision = true
+size = Vector3(0.9147461, 0.07290039, 0.074157715)
+material = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Chair_Leg_3" type="CSGBox3D" parent="Chair" unique_id=1485632246]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -4.249075, 0.36290094, 3.9457011)
+use_collision = true
+size = Vector3(0.9147461, 0.07290039, 0.074157715)
+material = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Chair_Leg_4" type="CSGBox3D" parent="Chair" unique_id=340257499]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -4.249075, 0.36290094, 3.0278578)
+use_collision = true
+size = Vector3(0.9147461, 0.07290039, 0.074157715)
+material = SubResource("StandardMaterial3D_qktwf")
