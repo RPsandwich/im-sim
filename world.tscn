@@ -116,6 +116,10 @@ emission = Color(0, 0, 1, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbp6q"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxurf"]
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("14_hiqwa")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo7i5"]
 albedo_texture = ExtResource("13_2o6r5")
 
@@ -128,13 +132,12 @@ albedo_texture = ExtResource("13_2o6r5")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_il2jm"]
 albedo_texture = ExtResource("13_2o6r5")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxurf"]
-albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
-albedo_texture = ExtResource("14_hiqwa")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4h6ng"]
 albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
 albedo_texture = ExtResource("15_2u3nc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k83mh"]
+albedo_texture = ExtResource("6_pkg7o")
 
 [node name="World" type="Node3D" unique_id=1620539426]
 
@@ -337,8 +340,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2513518, 1.00411, 4.3405128
 size = Vector3(0.4, 0.15, 0.55)
 material = SubResource("StandardMaterial3D_wgpkr")
 
-[node name="Bible2" type="CSGBox3D" parent="." unique_id=1420856839]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2513518, 1.0906206, 4.3405128)
+[node name="Bible_Cover" type="CSGBox3D" parent="Bible" unique_id=1420856839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08651066, 0)
 size = Vector3(0.4, 0.008471683, 0.55)
 material = SubResource("StandardMaterial3D_o3ebs")
 
@@ -395,6 +398,11 @@ material = SubResource("StandardMaterial3D_cbp6q")
 
 [node name="Luggage_Rack" type="Node3D" parent="." unique_id=12773554]
 
+[node name="Suitcase" type="CSGBox3D" parent="Luggage_Rack" unique_id=846620046]
+transform = Transform3D(-4.371139e-08, 0.8, 0, -1, -3.4969112e-08, 0, 0, 0, 0.8, 4.5212536, 1.0497973, 2.4902706)
+size = Vector3(0.3, 0.8, 1.5)
+material = SubResource("StandardMaterial3D_fxurf")
+
 [node name="Rack_Surface" type="CSGBox3D" parent="Luggage_Rack" unique_id=812163208]
 transform = Transform3D(0.97942406, 0, 0, 0, 0.97942406, 0, 0, 0, 0.97942406, 4.7410126, 0.8713205, 2.4937584)
 size = Vector3(0.1, 0.05, 1)
@@ -415,12 +423,34 @@ transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70
 size = Vector3(0.6, 1.4, 0.03)
 material = SubResource("StandardMaterial3D_il2jm")
 
-[node name="Suitcase" type="CSGBox3D" parent="." unique_id=846620046]
-transform = Transform3D(-4.371139e-08, 0.8, 0, -1, -3.4969112e-08, 0, 0, 0, 0.8, 4.5212536, 1.0497973, 2.4902706)
-size = Vector3(0.3, 0.8, 1.5)
-material = SubResource("StandardMaterial3D_fxurf")
-
-[node name="Suitcase2" type="CSGBox3D" parent="." unique_id=1483287194]
+[node name="Suitcase2" type="CSGBox3D" parent="Luggage_Rack" unique_id=1483287194]
 transform = Transform3D(-1.0278141e-08, 0.79999995, 0, -0.23513645, -3.496911e-08, 0, 0, 0, 0.8, 4.5212536, 1.0497973, 2.4902706)
 size = Vector3(0.3, 0.8330078, 1.5458984)
 material = SubResource("StandardMaterial3D_4h6ng")
+
+[node name="Desk" type="Node3D" parent="." unique_id=764500385]
+
+[node name="Desk_Top" type="CSGBox3D" parent="Desk" unique_id=1376413626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603446, 1.637697, 3.3545928)
+size = Vector3(0.6, 0.15, 3.0909424)
+material = SubResource("StandardMaterial3D_k83mh")
+
+[node name="Desk_leg_L" type="CSGBox3D" parent="Desk" unique_id=145849312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3536325, 0.815, 4.838112)
+size = Vector3(0.1, 1.63, 0.1)
+material = SubResource("StandardMaterial3D_k83mh")
+
+[node name="Desk_leg_L2" type="CSGBox3D" parent="Desk" unique_id=139823960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.812373, 0.815, 4.838112)
+size = Vector3(0.1, 1.63, 0.1)
+material = SubResource("StandardMaterial3D_k83mh")
+
+[node name="Desk_leg_R" type="CSGBox3D" parent="Desk" unique_id=8091135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3536325, 0.815, 1.8780603)
+size = Vector3(0.1, 1.63, 0.1)
+material = SubResource("StandardMaterial3D_k83mh")
+
+[node name="Desk_leg_R2" type="CSGBox3D" parent="Desk" unique_id=498875883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.849112, 0.815, 1.8780603)
+size = Vector3(0.1, 1.63, 0.1)
+material = SubResource("StandardMaterial3D_k83mh")
