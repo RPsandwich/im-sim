@@ -289,6 +289,16 @@ transform = Transform3D(2.5656726, 0, 0, 0, 0.47440758, 0, 0, 0, 0.90041614, -4.
 size = Vector3(0.1, 0.15, 4.1191406)
 material = SubResource("StandardMaterial3D_whwke")
 
+[node name="Window_Frame6" type="CSGBox3D" parent="Window" unique_id=358309497]
+transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.47440752, -3.935844e-08, 5.007338, 1.7460674, -1.2104405)
+size = Vector3(0.1, 0.15, 4.0665283)
+material = SubResource("StandardMaterial3D_whwke")
+
+[node name="Window_Frame7" type="CSGBox3D" parent="Window" unique_id=995416666]
+transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.47440752, -3.935844e-08, 4.99657, 1.7512884, -3.5571923)
+size = Vector3(0.1, 0.15, 4.078125)
+material = SubResource("StandardMaterial3D_whwke")
+
 [node name="Window_Frame4" type="CSGBox3D" parent="Window" unique_id=106241025]
 transform = Transform3D(2.5656726, 0, 0, 0, -2.3699446e-08, 0.78786415, 0, -0.54218006, -3.443863e-08, -4.996011, 2.8274105, 1.8023672)
 size = Vector3(0.1, 0.19072266, 2.1547852)
@@ -297,6 +307,11 @@ material = SubResource("StandardMaterial3D_whwke")
 [node name="Window_Frame5" type="CSGBox3D" parent="Window" unique_id=687347005]
 transform = Transform3D(2.5656726, 0, 0, 0, -2.3699446e-08, 0.78786415, 0, -0.54218006, -3.443863e-08, -4.996011, 2.8274105, -1.7914714)
 size = Vector3(0.1, 0.18937989, 2.1547852)
+material = SubResource("StandardMaterial3D_whwke")
+
+[node name="Window_Frame8" type="CSGBox3D" parent="Window" unique_id=937886580]
+transform = Transform3D(2.5656726, 0, 0, 0, 0.54218006, -7.1054274e-15, 0, 2.0674177e-15, 0.787864, 5.0027447, 3.5375655, -2.385048)
+size = Vector3(0.1, 0.18937989, 3.03656)
 material = SubResource("StandardMaterial3D_whwke")
 
 [node name="Window_Glass" type="CSGBox3D" parent="Window" unique_id=1450973191]
