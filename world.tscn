@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://clw3bkfmdmv01" path="res://textures/tandg.jpg" id="11_ic0uy"]
 [ext_resource type="Texture2D" uid="uid://b0svtntgvxrqb" path="res://textures/Fabric022_1K-JPG_Color.jpg" id="11_k3n1d"]
 [ext_resource type="Texture2D" uid="uid://4tqk0guyiqvq" path="res://textures/bible_cover_rotated.png" id="12_2u3nc"]
+[ext_resource type="Script" uid="uid://bwioyqrr3af2n" path="res://bible.gd" id="12_udxuc"]
 [ext_resource type="Texture2D" uid="uid://dq0y8rv1gsy2o" path="res://textures/Metal029_1K-JPG_Color.jpg" id="13_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://d01giqufadwme" path="res://textures/photo-metal-texture-pattern.jpg" id="14_hiqwa"]
 [ext_resource type="Texture2D" uid="uid://d15pc37vi2p28" path="res://textures/zip.jpg" id="15_2u3nc"]
@@ -363,8 +364,10 @@ material = SubResource("StandardMaterial3D_k3n1d")
 
 [node name="Bible" type="CSGBox3D" parent="." unique_id=1006641102]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2513518, 1.00411, 4.3405128)
+use_collision = true
 size = Vector3(0.4, 0.15, 0.55)
 material = SubResource("StandardMaterial3D_wgpkr")
+script = ExtResource("12_udxuc")
 
 [node name="Bible_Cover" type="CSGBox3D" parent="Bible" unique_id=1420856839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08651066, 0)
@@ -426,31 +429,37 @@ material = SubResource("StandardMaterial3D_cbp6q")
 
 [node name="Suitcase" type="CSGBox3D" parent="Luggage_Rack" unique_id=846620046]
 transform = Transform3D(-4.371139e-08, 0.8, 0, -1, -3.4969112e-08, 0, 0, 0, 0.8, 4.5212536, 1.0497973, 2.4902706)
+use_collision = true
 size = Vector3(0.3, 0.8, 1.5)
 material = SubResource("StandardMaterial3D_fxurf")
 
 [node name="Rack_Surface" type="CSGBox3D" parent="Luggage_Rack" unique_id=812163208]
 transform = Transform3D(0.97942406, 0, 0, 0, 0.97942406, 0, 0, 0, 0.97942406, 4.7410126, 0.8713205, 2.4937584)
+use_collision = true
 size = Vector3(0.1, 0.05, 1)
 material = SubResource("StandardMaterial3D_bo7i5")
 
 [node name="Rack_Surface2" type="CSGBox3D" parent="Luggage_Rack" unique_id=670920049]
 transform = Transform3D(0.97942406, 0, 0, 0, 0.97942406, 0, 0, 0, 0.97942406, 4.2661133, 0.8713205, 2.4937584)
+use_collision = true
 size = Vector3(0.1, 0.05, 1)
 material = SubResource("StandardMaterial3D_mc2jv")
 
 [node name="Rack_Leg_L" type="CSGBox3D" parent="Luggage_Rack" unique_id=1483871899]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 4.5, 0.3967284, 2.4706752)
+use_collision = true
 size = Vector3(0.6, 1.402, 0.03)
 material = SubResource("StandardMaterial3D_wjb0r")
 
 [node name="Rack_Leg_R" type="CSGBox3D" parent="Luggage_Rack" unique_id=1431216059]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 4.5, 0.3967284, 2.4748275)
+use_collision = true
 size = Vector3(0.6, 1.4, 0.03)
 material = SubResource("StandardMaterial3D_il2jm")
 
 [node name="Suitcase2" type="CSGBox3D" parent="Luggage_Rack" unique_id=1483287194]
 transform = Transform3D(-1.0278141e-08, 0.79999995, 0, -0.23513645, -3.496911e-08, 0, 0, 0, 0.8, 4.5212536, 1.0497973, 2.4902706)
+use_collision = true
 size = Vector3(0.3, 0.8330078, 1.5458984)
 material = SubResource("StandardMaterial3D_4h6ng")
 

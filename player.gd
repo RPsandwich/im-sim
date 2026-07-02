@@ -7,9 +7,14 @@ const MOUSE_SENSITIVITY = 0.002
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var interact_ray = $Head/InteractRay
+@onready var interact_prompt = $CanvasLayer/InteractPrompt
+@onready var message_label = $CanvasLayer/MessageLabel
+@onready var message_timer = $CanvasLayer/MessageTimer
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	interact_prompt.visible = false
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -18,6 +23,10 @@ func _unhandled_input(event):
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if event.is_action_pressed("interact"):
+		var collider = interact_ray.get_collider()
+		if collider and collider.has_method("interact"):
+			collider.interact()	
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -34,5 +43,18 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	var collider = interact_ray.get_collider()
+	if collider and collider.has_method("interact"):
+		interact_prompt.visible = true
+	else:
+		interact_prompt.visible = false
 
 	move_and_slide()
+	
+func show_message(text):
+	message_label.text = text
+	message_label.visible = true
+	message_timer.start()
+
+func _on_message_timer_timeout():
+	message_label.visible = false
