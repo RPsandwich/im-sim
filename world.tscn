@@ -7,12 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://b6xufqe58dj4j" path="res://textures/rough_linen_diff_1k.jpg" id="5_036b0"]
 [ext_resource type="Texture2D" uid="uid://d1q3622j2d1i5" path="res://textures/Fabric001_1K-JPG_Color.jpg" id="6_dwbse"]
 [ext_resource type="Texture2D" uid="uid://4jcqe34ky2l6" path="res://textures/Wood067_1K-JPG_Color.jpg" id="6_pkg7o"]
+[ext_resource type="Script" uid="uid://d2uaxeutvoswp" path="res://bed_mattress.gd" id="7_4h6ng"]
 [ext_resource type="Texture2D" uid="uid://b62n6jr5qwn8a" path="res://textures/Metal011_1K-JPG_Color.jpg" id="9_ioo17"]
 [ext_resource type="Texture2D" uid="uid://byoa81iiennpi" path="res://textures/Leather026_1K-JPG_Color.jpg" id="10_wse8f"]
 [ext_resource type="Texture2D" uid="uid://cevhulnaiskpa" path="res://textures/BEIGEImage__GZT8_v3.jpg" id="11_2o6r5"]
+[ext_resource type="Script" uid="uid://caj4bsp4w3rys" path="res://window_glass.gd" id="11_bh8nc"]
 [ext_resource type="Texture2D" uid="uid://clw3bkfmdmv01" path="res://textures/tandg.jpg" id="11_ic0uy"]
 [ext_resource type="Texture2D" uid="uid://b0svtntgvxrqb" path="res://textures/Fabric022_1K-JPG_Color.jpg" id="11_k3n1d"]
 [ext_resource type="Texture2D" uid="uid://4tqk0guyiqvq" path="res://textures/bible_cover_rotated.png" id="12_2u3nc"]
+[ext_resource type="Script" uid="uid://d3g18swv112rv" path="res://door.gd" id="12_qktwf"]
 [ext_resource type="Script" uid="uid://bwioyqrr3af2n" path="res://bible.gd" id="12_udxuc"]
 [ext_resource type="Texture2D" uid="uid://dq0y8rv1gsy2o" path="res://textures/Metal029_1K-JPG_Color.jpg" id="13_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://d01giqufadwme" path="res://textures/photo-metal-texture-pattern.jpg" id="14_hiqwa"]
@@ -23,6 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://bruw6nxe656dk" path="res://textures/safe.jpg" id="18_bc84e"]
 [ext_resource type="Script" uid="uid://c7020bs8ffqdc" path="res://safe.gd" id="19_wukud"]
 [ext_resource type="Texture2D" uid="uid://bhobu8c677rdd" path="res://textures/istockphoto-182433647-612x612(1).jpg" id="20_il2jm"]
+[ext_resource type="Texture2D" uid="uid://dyciqd0topl11" path="res://textures/no-signal-tv-screen-with-noise-julien.jpg" id="21_wjb0r"]
+[ext_resource type="Script" uid="uid://dxgbtrnwix0nm" path="res://tv_screen.gd" id="22_bo7i5"]
+[ext_resource type="Script" uid="uid://cbdkuf54q0bg2" path="res://drawer_1.gd" id="22_o3ebs"]
+[ext_resource type="Script" uid="uid://2ywiusveo8hx" path="res://drawer_2.gd" id="23_k83mh"]
+[ext_resource type="Script" uid="uid://cycfoaj8x3iyr" path="res://suitcase.gd" id="23_mc2jv"]
 
 [sub_resource type="Environment" id="Environment_f3sb7"]
 ambient_light_color = Color(1, 1, 1, 1)
@@ -107,6 +115,7 @@ uv1_scale = Vector3(1, -1, 1)
 albedo_texture = ExtResource("14_ikiii")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2u3nc"]
+albedo_color = Color(0.9428228, 0.94282264, 0.94282264, 1)
 albedo_texture = ExtResource("11_ic0uy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiqwa"]
@@ -126,8 +135,10 @@ albedo_texture = ExtResource("6_pkg7o")
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26xuy"]
+albedo_texture = ExtResource("21_wjb0r")
 emission_enabled = true
-emission = Color(0, 0, 1, 1)
+emission = Color(0.54392964, 0.6041731, 1, 1)
+emission_energy_multiplier = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbp6q"]
 albedo_color = Color(0, 0, 0, 1)
@@ -135,6 +146,10 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fxurf"]
 albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
 albedo_texture = ExtResource("14_hiqwa")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4h6ng"]
+albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
+albedo_texture = ExtResource("15_2u3nc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo7i5"]
 albedo_texture = ExtResource("13_2o6r5")
@@ -147,10 +162,6 @@ albedo_texture = ExtResource("13_2o6r5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_il2jm"]
 albedo_texture = ExtResource("13_2o6r5")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4h6ng"]
-albedo_color = Color(1.353256, 1.353256, 1.353256, 1)
-albedo_texture = ExtResource("15_2u3nc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k83mh"]
 albedo_texture = ExtResource("6_pkg7o")
@@ -256,6 +267,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4731965, 2.401349)
 use_collision = true
 size = Vector3(3, 0.5, 5)
 material = SubResource("StandardMaterial3D_ioo17")
+script = ExtResource("7_4h6ng")
 
 [node name="Bed_Frame" type="CSGBox3D" parent="Bed" unique_id=1724332464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 2.352765)
@@ -333,8 +345,10 @@ material = SubResource("StandardMaterial3D_whwke")
 [node name="Window_Glass" type="CSGBox3D" parent="Window" unique_id=1450973191]
 transform = Transform3D(0.92279696, 0, 0, 0, -4.902322e-08, -0.7382375, 0, 1.1215206, -3.2269384e-08, -5.060215, 2.821691, -0.034407217)
 material_override = SubResource("StandardMaterial3D_wukud")
+use_collision = true
 size = Vector3(0.05, 2.565277, 4.458496)
 material = SubResource("StandardMaterial3D_bc84e")
+script = ExtResource("11_bh8nc")
 
 [node name="Curtain_Left" type="CSGBox3D" parent="Window" unique_id=321532367]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7354603, 2.296906, 1.6099815)
@@ -354,10 +368,12 @@ material = SubResource("StandardMaterial3D_oenf1")
 
 [node name="Door" type="CSGBox3D" parent="." unique_id=1175837534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.7438098, -2.0623744)
+use_collision = true
 size = Vector3(0.15, 3.4721375, 1.9665039)
 material = SubResource("StandardMaterial3D_kq25h")
+script = ExtResource("12_qktwf")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Door" unique_id=1455636969]
+[node name="Doorknob" type="CSGSphere3D" parent="Door" unique_id=1455636969]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13984156, 0.024609208, 0.77387905)
 radius = 0.07
 material = SubResource("StandardMaterial3D_k8iv3")
@@ -432,15 +448,19 @@ use_collision = true
 size = Vector3(4, 2, 1)
 material = SubResource("StandardMaterial3D_v8wql")
 
-[node name="Drawer_1" type="CSGBox3D" parent="Dresser" unique_id=2106260015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48324013, -4.363227)
-size = Vector3(3.7, 0.5, 1)
-material = SubResource("StandardMaterial3D_v8wql")
-
-[node name="Drawer_2" type="CSGBox3D" parent="Dresser" unique_id=823653989]
+[node name="Drawer_1" type="CSGBox3D" parent="Dresser" unique_id=823653989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4832401, -4.363227)
+use_collision = true
 size = Vector3(3.7, 0.5, 1)
 material = SubResource("StandardMaterial3D_v8wql")
+script = ExtResource("23_k83mh")
+
+[node name="Drawer_2" type="CSGBox3D" parent="Dresser" unique_id=2106260015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48324013, -4.363227)
+use_collision = true
+size = Vector3(3.7, 0.5, 1)
+material = SubResource("StandardMaterial3D_v8wql")
+script = ExtResource("22_o3ebs")
 
 [node name="TV" type="Node3D" parent="." unique_id=316497267]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8567219, -4.4415827)
@@ -452,8 +472,10 @@ material = SubResource("StandardMaterial3D_ikiii")
 
 [node name="TV_Screen" type="CSGBox3D" parent="TV" unique_id=662327893]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.014391899)
+use_collision = true
 size = Vector3(1.8596191, 1.1748047, 0.15)
 material = SubResource("StandardMaterial3D_26xuy")
+script = ExtResource("22_bo7i5")
 
 [node name="TV_Base" type="CSGBox3D" parent="TV" unique_id=1334260745]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.72626567, 0.0037527084)
@@ -467,6 +489,13 @@ transform = Transform3D(-4.371139e-08, 0.8, 0, -1, -3.4969112e-08, 0, 0, 0, 0.8,
 use_collision = true
 size = Vector3(0.3, 0.8, 1.5)
 material = SubResource("StandardMaterial3D_fxurf")
+script = ExtResource("23_mc2jv")
+
+[node name="Suitcase2" type="CSGBox3D" parent="Luggage_Rack" unique_id=1483287194]
+transform = Transform3D(-1.0278141e-08, 0.79999995, 0, -0.23513645, -3.496911e-08, 0, 0, 0, 0.8, 4.5212536, 1.0497973, 2.4902706)
+use_collision = true
+size = Vector3(0.3, 0.8330078, 1.5458984)
+material = SubResource("StandardMaterial3D_4h6ng")
 
 [node name="Rack_Surface" type="CSGBox3D" parent="Luggage_Rack" unique_id=812163208]
 transform = Transform3D(0.97942406, 0, 0, 0, 0.97942406, 0, 0, 0, 0.97942406, 4.7410126, 0.8713205, 2.4937584)
@@ -491,12 +520,6 @@ transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70
 use_collision = true
 size = Vector3(0.6, 1.4, 0.03)
 material = SubResource("StandardMaterial3D_il2jm")
-
-[node name="Suitcase2" type="CSGBox3D" parent="Luggage_Rack" unique_id=1483287194]
-transform = Transform3D(-1.0278141e-08, 0.79999995, 0, -0.23513645, -3.496911e-08, 0, 0, 0, 0.8, 4.5212536, 1.0497973, 2.4902706)
-use_collision = true
-size = Vector3(0.3, 0.8330078, 1.5458984)
-material = SubResource("StandardMaterial3D_4h6ng")
 
 [node name="Desk" type="Node3D" parent="." unique_id=764500385]
 
