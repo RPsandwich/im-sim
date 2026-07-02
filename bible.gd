@@ -1,4 +1,26 @@
 extends CSGBox3D
 
+var already_taken = false
+var is_open = false
+
+@onready var hinge = $Bible_Hinge
+
 func interact():
-	get_tree().get_first_node_in_group("player").show_message("You found a key hidden in the Bible!")
+	var player = get_tree().get_first_node_in_group("player")
+	
+	if not is_open:
+		open_bible(player)
+	else:
+		player.show_message("The Bible is empty.")
+
+func open_bible(player):
+	is_open = true
+	var tween = create_tween()
+	tween.tween_property(hinge, "rotation:z", deg_to_rad(-110), 0.5)
+	
+	if not already_taken:
+		already_taken = true
+		player.has_key = true
+		player.show_message("You found a key hidden in the Bible!")
+	else:
+		player.show_message("The Bible is empty.")

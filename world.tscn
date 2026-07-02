@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://bwioyqrr3af2n" path="res://bible.gd" id="12_udxuc"]
 [ext_resource type="Texture2D" uid="uid://dq0y8rv1gsy2o" path="res://textures/Metal029_1K-JPG_Color.jpg" id="13_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://d01giqufadwme" path="res://textures/photo-metal-texture-pattern.jpg" id="14_hiqwa"]
+[ext_resource type="Texture2D" uid="uid://d068cwgn4bxc7" path="res://textures/f0e5e4bf871fe8d6ddbff93c04e3318b(1).jpg" id="14_ikiii"]
 [ext_resource type="Texture2D" uid="uid://d15pc37vi2p28" path="res://textures/zip.jpg" id="15_2u3nc"]
 
 [sub_resource type="Environment" id="Environment_f3sb7"]
@@ -96,6 +97,9 @@ albedo_texture = ExtResource("10_wse8f")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3ebs"]
 albedo_texture = ExtResource("12_2u3nc")
 uv1_scale = Vector3(1, -1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bh8nc"]
+albedo_texture = ExtResource("14_ikiii")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2u3nc"]
 albedo_texture = ExtResource("11_ic0uy")
@@ -369,18 +373,31 @@ size = Vector3(0.4, 0.15, 0.55)
 material = SubResource("StandardMaterial3D_wgpkr")
 script = ExtResource("12_udxuc")
 
-[node name="Bible_Cover" type="CSGBox3D" parent="Bible" unique_id=1420856839]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08651066, 0)
+[node name="Bible_Hinge" type="Node3D" parent="Bible" unique_id=1159585115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20626378, 0.07952368, 0)
+
+[node name="Bible_Cover" type="CSGBox3D" parent="Bible/Bible_Hinge" unique_id=125416032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20626378, 0.0075399876, 0)
 size = Vector3(0.4, 0.008471683, 0.55)
 material = SubResource("StandardMaterial3D_o3ebs")
 
-[node name="Painting_Canvas" type="CSGBox3D" parent="." unique_id=1509094444]
+[node name="Bible_Hollowed" type="CSGBox3D" parent="." unique_id=1420856839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2513518, 1.0825398, 4.3405128)
+material_override = SubResource("StandardMaterial3D_bh8nc")
+size = Vector3(0.4, 0.008471683, 0.55)
+material = SubResource("StandardMaterial3D_o3ebs")
+
+[node name="Painting" type="Node3D" parent="." unique_id=834285346]
+
+[node name="Painting_Canvas" type="CSGBox3D" parent="Painting" unique_id=1509094444]
 transform = Transform3D(-0.0064276964, 0.5999959, 2.6226298e-08, 0, -2.6227193e-08, 0.6, 1.0025439, 0.0038468055, 1.6814497e-10, -3.3383558, 2.7256467, -4.8426933)
+use_collision = true
 size = Vector3(0.1, 2.9, 1.9)
 material = SubResource("StandardMaterial3D_2u3nc")
 
-[node name="Painting_Frame" type="CSGBox3D" parent="Painting_Canvas" unique_id=1019234583]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.0027709007, -0.0002076629, 0.007179022)
+[node name="Painting_Frame" type="CSGBox3D" parent="Painting" unique_id=1019234583]
+transform = Transform3D(-0.0064276964, -3.5704772e-13, -0.5999959, 0, 0.6, 3.5882408e-13, 1.0025439, -4.246603e-15, -0.0038468055, -3.3384626, 2.7299542, -4.845472)
+use_collision = true
 size = Vector3(0.1, 2, 3)
 material = SubResource("StandardMaterial3D_hiqwa")
 

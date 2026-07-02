@@ -4,6 +4,7 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const GRAVITY = 9.8
 const MOUSE_SENSITIVITY = 0.002
+var has_key = false
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
