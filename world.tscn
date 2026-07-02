@@ -83,6 +83,9 @@ albedo_texture = ExtResource("9_ioo17")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kq25h"]
 albedo_texture = ExtResource("6_pkg7o")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8iv3"]
+albedo_texture = ExtResource("9_ioo17")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3n1d"]
 albedo_texture = ExtResource("6_pkg7o")
 
@@ -340,6 +343,11 @@ material = SubResource("StandardMaterial3D_oenf1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.7438098, -2.0623744)
 size = Vector3(0.15, 3.4721375, 1.9665039)
 material = SubResource("StandardMaterial3D_kq25h")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Door" unique_id=1455636969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13984156, 0.024609208, 0.77387905)
+radius = 0.07
+material = SubResource("StandardMaterial3D_k8iv3")
 
 [node name="Nightstand_R" type="CSGBox3D" parent="." unique_id=198563913]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2260005, 0.42435098, 4.391383)
