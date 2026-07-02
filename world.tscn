@@ -186,7 +186,7 @@ emission_energy_multiplier = 3.0
 [node name="World" type="Node3D" unique_id=1620539426]
 
 [node name="Player" parent="." unique_id=1744863859 instance=ExtResource("1_f3sb7")]
-transform = Transform3D(-0.53877074, 0, -0.8424524, 0, 1, 0, 0.8424524, 0, -0.53877074, -3.4395475, 0.94880223, -3.3232818)
+transform = Transform3D(0.099473715, 0, 0.99504024, 0, 1, 0, -0.99504024, 0, 0.099473715, 2.442397, 0.94454575, 2.596725)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=469424794]
 environment = SubResource("Environment_f3sb7")
