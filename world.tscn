@@ -18,6 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://d01giqufadwme" path="res://textures/photo-metal-texture-pattern.jpg" id="14_hiqwa"]
 [ext_resource type="Texture2D" uid="uid://d068cwgn4bxc7" path="res://textures/f0e5e4bf871fe8d6ddbff93c04e3318b(1).jpg" id="14_ikiii"]
 [ext_resource type="Texture2D" uid="uid://d15pc37vi2p28" path="res://textures/zip.jpg" id="15_2u3nc"]
+[ext_resource type="Script" uid="uid://bxh8tv2d52ne0" path="res://painting.gd" id="15_26xuy"]
+[ext_resource type="Script" uid="uid://cf8t0f4tewoj6" path="res://painting_canvas.gd" id="16_cbp6q"]
+[ext_resource type="Texture2D" uid="uid://bruw6nxe656dk" path="res://textures/safe.jpg" id="18_bc84e"]
+[ext_resource type="Script" uid="uid://c7020bs8ffqdc" path="res://safe.gd" id="19_wukud"]
+[ext_resource type="Texture2D" uid="uid://bhobu8c677rdd" path="res://textures/istockphoto-182433647-612x612(1).jpg" id="20_il2jm"]
 
 [sub_resource type="Environment" id="Environment_f3sb7"]
 ambient_light_color = Color(1, 1, 1, 1)
@@ -109,7 +114,10 @@ albedo_texture = ExtResource("6_pkg7o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udxuc"]
 albedo_color = Color(0.7204674, 0.7204675, 0.7204674, 1)
-albedo_texture = ExtResource("9_ioo17")
+albedo_texture = ExtResource("18_bc84e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjr1n"]
+albedo_texture = ExtResource("20_il2jm")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v8wql"]
 albedo_texture = ExtResource("6_pkg7o")
@@ -388,12 +396,14 @@ size = Vector3(0.4, 0.008471683, 0.55)
 material = SubResource("StandardMaterial3D_o3ebs")
 
 [node name="Painting" type="Node3D" parent="." unique_id=834285346]
+script = ExtResource("15_26xuy")
 
 [node name="Painting_Canvas" type="CSGBox3D" parent="Painting" unique_id=1509094444]
 transform = Transform3D(-0.0064276964, 0.5999959, 2.6226298e-08, 0, -2.6227193e-08, 0.6, 1.0025439, 0.0038468055, 1.6814497e-10, -3.3383558, 2.7256467, -4.8426933)
 use_collision = true
 size = Vector3(0.1, 2.9, 1.9)
 material = SubResource("StandardMaterial3D_2u3nc")
+script = ExtResource("16_cbp6q")
 
 [node name="Painting_Frame" type="CSGBox3D" parent="Painting" unique_id=1019234583]
 transform = Transform3D(-0.0064276964, -3.5704772e-13, -0.5999959, 0, 0.6, 3.5882408e-13, 1.0025439, -4.246603e-15, -0.0038468055, -3.3384626, 2.7299542, -4.845472)
@@ -402,9 +412,17 @@ size = Vector3(0.1, 2, 3)
 material = SubResource("StandardMaterial3D_hiqwa")
 
 [node name="Safe" type="CSGBox3D" parent="." unique_id=1036851698]
-transform = Transform3D(-0.006394813, 0, -0.5999959, 0, 0.6, 0, 0.997415, 0, -0.0038468055, -3.3379152, 2.7084038, -4.9895864)
-size = Vector3(0.2, 1, 1.2)
+transform = Transform3D(-0.006394813, 0, -0.5999959, 0, 0.6, 0, 0.997415, 0, -0.0038468055, -3.3379152, 2.6345756, -4.9895864)
+use_collision = true
+size = Vector3(0.2, 0.75390625, 1.2)
 material = SubResource("StandardMaterial3D_udxuc")
+script = ExtResource("19_wukud")
+
+[node name="Safe_open" type="CSGBox3D" parent="." unique_id=1866281828]
+transform = Transform3D(-0.006394813, 0, -0.5999959, 0, 0.6, 0, 0.997415, 0, -0.0038468055, -3.3379152, 2.6345756, -4.9972167)
+use_collision = true
+size = Vector3(0.2, 0.75390625, 1.2)
+material = SubResource("StandardMaterial3D_jjr1n")
 
 [node name="Dresser" type="Node3D" parent="." unique_id=1264682867]
 
