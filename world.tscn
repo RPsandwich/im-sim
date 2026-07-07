@@ -8,11 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://d1q3622j2d1i5" path="res://textures/Fabric001_1K-JPG_Color.jpg" id="6_dwbse"]
 [ext_resource type="Texture2D" uid="uid://4jcqe34ky2l6" path="res://textures/Wood067_1K-JPG_Color.jpg" id="6_pkg7o"]
 [ext_resource type="Script" uid="uid://d2uaxeutvoswp" path="res://bed_mattress.gd" id="7_4h6ng"]
+[ext_resource type="Script" uid="uid://cgofke20fafbk" path="res://lamp.gd" id="9_6ah6f"]
 [ext_resource type="Texture2D" uid="uid://b62n6jr5qwn8a" path="res://textures/Metal011_1K-JPG_Color.jpg" id="9_ioo17"]
 [ext_resource type="Texture2D" uid="uid://byoa81iiennpi" path="res://textures/Leather026_1K-JPG_Color.jpg" id="10_wse8f"]
 [ext_resource type="Texture2D" uid="uid://cevhulnaiskpa" path="res://textures/BEIGEImage__GZT8_v3.jpg" id="11_2o6r5"]
 [ext_resource type="Script" uid="uid://caj4bsp4w3rys" path="res://window_glass.gd" id="11_bh8nc"]
+[ext_resource type="AudioStream" uid="uid://fpmhbkdbwcqh" path="res://395125__jsbarrett__desk-lamp-switch.wav" id="11_g1i3r"]
 [ext_resource type="Texture2D" uid="uid://b0svtntgvxrqb" path="res://textures/Fabric022_1K-JPG_Color.jpg" id="11_k3n1d"]
+[ext_resource type="Script" uid="uid://drnanxym0hdmr" path="res://lamp_shade.gd" id="11_my276"]
 [ext_resource type="Texture2D" uid="uid://4tqk0guyiqvq" path="res://textures/bible_cover_rotated.png" id="12_2u3nc"]
 [ext_resource type="Script" uid="uid://d3g18swv112rv" path="res://door.gd" id="12_qktwf"]
 [ext_resource type="Script" uid="uid://bwioyqrr3af2n" path="res://bible.gd" id="12_udxuc"]
@@ -36,7 +39,8 @@
 
 [sub_resource type="Environment" id="Environment_f3sb7"]
 ambient_light_source = 2
-ambient_light_energy = 0.1
+ambient_light_color = Color(0.18359056, 0.18359041, 0.18359044, 1)
+ambient_light_energy = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlwt5"]
 albedo_texture = ExtResource("2_pkg7o")
@@ -291,6 +295,7 @@ material = SubResource("StandardMaterial3D_ic0uy")
 
 [node name="Lamp" type="Node3D" parent="." unique_id=115731457]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26644087, 0, 0)
+script = ExtResource("9_6ah6f")
 
 [node name="Lamp_Base" type="CSGCylinder3D" parent="Lamp" unique_id=1618276567]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2505639, 0.9837152, 4.3352356)
@@ -312,12 +317,16 @@ use_collision = true
 radius = 0.35
 height = 0.4
 material = SubResource("StandardMaterial3D_70uel")
+script = ExtResource("11_my276")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lamp" unique_id=1341646101]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2201574, 1.7462566, 4.3234096)
 light_color = Color(0.99999994, 0.850634, 0.5968582, 1)
 light_energy = 2.5
 omni_range = 15.0
+
+[node name="LampClick" type="AudioStreamPlayer" parent="Lamp" unique_id=1015492004]
+stream = ExtResource("11_g1i3r")
 
 [node name="Window" type="Node3D" parent="." unique_id=1411950743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.85921526, 0, 0, 0)
