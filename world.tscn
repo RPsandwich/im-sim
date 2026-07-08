@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cmivt8nc28r2n" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://d2x3raxa4cvyp" path="res://textures/PaintedPlaster015_1K-JPG_Color.jpg" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://r6kchads0h4o" path="res://textures/Carpet015_1K-JPG_Color.jpg" id="1_tlwt5"]
+[ext_resource type="AudioStream" uid="uid://dngmynsmesuvs" path="res://sounds/741439__brunoauzet__room-tone-ibis-hotel.mp3" id="1_yx0jh"]
 [ext_resource type="Texture2D" uid="uid://t4cfkjcl3rh7" path="res://textures/PaintedPlaster017_1K-JPG_Color.jpg" id="2_pkg7o"]
 [ext_resource type="Texture2D" uid="uid://b6xufqe58dj4j" path="res://textures/rough_linen_diff_1k.jpg" id="5_036b0"]
 [ext_resource type="Texture2D" uid="uid://d1q3622j2d1i5" path="res://textures/Fabric001_1K-JPG_Color.jpg" id="6_dwbse"]
@@ -13,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://byoa81iiennpi" path="res://textures/Leather026_1K-JPG_Color.jpg" id="10_wse8f"]
 [ext_resource type="Texture2D" uid="uid://cevhulnaiskpa" path="res://textures/BEIGEImage__GZT8_v3.jpg" id="11_2o6r5"]
 [ext_resource type="Script" uid="uid://caj4bsp4w3rys" path="res://window_glass.gd" id="11_bh8nc"]
-[ext_resource type="AudioStream" uid="uid://fpmhbkdbwcqh" path="res://395125__jsbarrett__desk-lamp-switch.wav" id="11_g1i3r"]
+[ext_resource type="AudioStream" uid="uid://fpmhbkdbwcqh" path="res://sounds/395125__jsbarrett__desk-lamp-switch.wav" id="11_g1i3r"]
 [ext_resource type="Texture2D" uid="uid://b0svtntgvxrqb" path="res://textures/Fabric022_1K-JPG_Color.jpg" id="11_k3n1d"]
 [ext_resource type="Script" uid="uid://drnanxym0hdmr" path="res://lamp_shade.gd" id="11_my276"]
 [ext_resource type="Texture2D" uid="uid://4tqk0guyiqvq" path="res://textures/bible_cover_rotated.png" id="12_2u3nc"]
@@ -29,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://b553y3p7o6tyw" path="res://textures/163049.jpg" id="19_bh8nc"]
 [ext_resource type="Script" uid="uid://c7020bs8ffqdc" path="res://safe.gd" id="19_wukud"]
 [ext_resource type="Texture2D" uid="uid://bhobu8c677rdd" path="res://textures/istockphoto-182433647-612x612(1).jpg" id="20_il2jm"]
+[ext_resource type="AudioStream" uid="uid://dxrr8lucp6144" path="res://sounds/614081__mateusboga__opening-a-book.wav" id="20_my276"]
 [ext_resource type="Texture2D" uid="uid://dyciqd0topl11" path="res://textures/no-signal-tv-screen-with-noise-julien.jpg" id="21_wjb0r"]
 [ext_resource type="Script" uid="uid://dxgbtrnwix0nm" path="res://tv_screen.gd" id="22_bo7i5"]
 [ext_resource type="Script" uid="uid://cbdkuf54q0bg2" path="res://drawer_1.gd" id="22_o3ebs"]
@@ -188,6 +190,10 @@ emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 3.0
 
 [node name="World" type="Node3D" unique_id=1620539426]
+
+[node name="AmbientAudio" type="AudioStreamPlayer" parent="." unique_id=1102422780]
+stream = ExtResource("1_yx0jh")
+autoplay = true
 
 [node name="Player" parent="." unique_id=1744863859 instance=ExtResource("1_f3sb7")]
 transform = Transform3D(0.099473715, 0, 0.99504024, 0, 1, 0, -0.99504024, 0, 0.099473715, 2.442397, 0.94454575, 2.596725)
@@ -428,6 +434,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20626378, 0.07952368, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20626378, 0.0075399876, 0)
 size = Vector3(0.4, 0.008471683, 0.55)
 material = SubResource("StandardMaterial3D_o3ebs")
+
+[node name="BibleSound" type="AudioStreamPlayer" parent="Bible" unique_id=816046612]
+stream = ExtResource("20_my276")
 
 [node name="Bible_Hollowed" type="CSGBox3D" parent="." unique_id=1420856839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9998107, 1.0825398, 4.3405128)
