@@ -18,3 +18,8 @@ func interact():
 	var tween = create_tween()
 	tween.tween_property(self, "position:x", position.x - .72, 0.5)
 	player.show_message("The safe clicks open...")
+	
+	await get_tree().create_timer(0.5).timeout
+	var lamp = get_tree().get_first_node_in_group("lamp")
+	if lamp:
+		lamp.interact()

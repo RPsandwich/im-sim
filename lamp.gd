@@ -12,7 +12,7 @@ func interact():
 	shade.material.emission_enabled = is_on
 	click_sound.play()
 	var player = get_tree().get_first_node_in_group("player")
-	if is_on:
-		player.show_message("You turn the lamp on.")
-	else:
-		player.show_message("You turn the lamp off.")
+	#if is_on:
+		#player.show_message("You turn the lamp on.")
+	#else:
+		#player.show_message("You turn the lamp off.")

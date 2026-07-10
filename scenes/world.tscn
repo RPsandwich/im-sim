@@ -308,7 +308,7 @@ use_collision = true
 size = Vector3(3.1875, 1.7485352, 0.2)
 material = SubResource("StandardMaterial3D_ic0uy")
 
-[node name="Lamp" type="Node3D" parent="." unique_id=115731457]
+[node name="Lamp" type="Node3D" parent="." unique_id=115731457 groups=["lamp"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26644087, 0, 0)
 script = ExtResource("9_6ah6f")
 

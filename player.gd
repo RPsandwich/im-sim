@@ -3,6 +3,9 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const GRAVITY = 9.8
 const MOUSE_SENSITIVITY = 0.002
+
+var skip_intro = false # make false to see intro
+
 var has_key = false
 var intro_playing = true
 var standing_y = 2.0
@@ -23,7 +26,14 @@ func _ready():
 	title_card.modulate.a = 0.0
 	head.rotation.x = deg_to_rad(89)
 	position.y = lying_y
-	play_intro()
+	if skip_intro:
+		fade_rect.modulate.a = 0.0
+		intro_playing = false
+		position.y = standing_y
+		head.rotation.x = 0.0
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	else:
+		play_intro()
 
 func play_intro():
 	fade_rect.modulate.a = 1.0
