@@ -1,8 +1,25 @@
 [gd_scene format=3 uid="uid://cmivt8nc28r2n"]
 
 [ext_resource type="Script" uid="uid://dorpd1n1wregl" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="FontFile" uid="uid://csxdgno6vyper" path="res://assets/fonts/IMFellEnglish-Italic.ttf" id="2_g2els"]
+[ext_resource type="ArrayMesh" uid="uid://c5m2wsuxy236y" path="res://assets/models/revolver final.obj" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://4jcqe34ky2l6" path="res://assets/textures/Wood067_1K-JPG_Color.jpg" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://b62n6jr5qwn8a" path="res://assets/textures/Metal011_1K-JPG_Color.jpg" id="3_qlg0r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v8wql"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqkch"]
+albedo_color = Color(0.49747366, 0.49747366, 0.49747366, 1)
+albedo_texture = ExtResource("3_qlg0r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smehm"]
+albedo_texture = ExtResource("3_dqkch")
+roughness = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qhqgy"]
+albedo_color = Color(0.23529412, 0.24705882, 0.25490198, 1)
+metallic = 0.8
+roughness = 0.4
 
 [node name="Player" type="CharacterBody3D" unique_id=1744863859 groups=["player"]]
 script = ExtResource("1_4flbx")
@@ -15,6 +32,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1155149791]
 fov = 65.0
+
+[node name="GunViewmodel" type="MeshInstance3D" parent="Head/Camera3D" unique_id=1658243734]
+transform = Transform3D(-4.371137e-11, 0, -0.001, 0, 0.001, 0, 0.001, 0, -4.371137e-11, 0.26544183, -0.32254076, -0.6536857)
+visible = false
+mesh = ExtResource("2_qhqgy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqkch")
+surface_material_override/1 = SubResource("StandardMaterial3D_smehm")
+surface_material_override/2 = SubResource("StandardMaterial3D_dqkch")
+surface_material_override/3 = SubResource("StandardMaterial3D_smehm")
+surface_material_override/4 = SubResource("StandardMaterial3D_dqkch")
+surface_material_override/5 = SubResource("StandardMaterial3D_qhqgy")
+surface_material_override/6 = SubResource("StandardMaterial3D_qhqgy")
+surface_material_override/7 = SubResource("StandardMaterial3D_qhqgy")
+surface_material_override/8 = SubResource("StandardMaterial3D_qhqgy")
+surface_material_override/9 = SubResource("StandardMaterial3D_qhqgy")
+surface_material_override/10 = SubResource("StandardMaterial3D_qhqgy")
+surface_material_override/11 = SubResource("StandardMaterial3D_qhqgy")
+surface_material_override/12 = SubResource("StandardMaterial3D_qhqgy")
 
 [node name="InteractRay" type="RayCast3D" parent="Head" unique_id=1317994473]
 target_position = Vector3(0, 0, -3)
@@ -38,16 +73,21 @@ theme_override_constants/outline_size = 4
 text = "Press E to interact"
 
 [node name="MessageLabel" type="Label" parent="CanvasLayer" unique_id=1872660021]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 131.0
-offset_top = -156.0
-offset_right = 204.04349
-offset_bottom = -114.0
-grow_vertical = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.521973
+offset_top = 176.0
+offset_right = 36.521484
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_g2els")
+theme_override_font_sizes/font_size = 25
 
 [node name="MessageTimer" type="Timer" parent="CanvasLayer" unique_id=448821245]
 wait_time = 3.0
@@ -77,5 +117,15 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="GunPrompt" type="Label" parent="CanvasLayer" unique_id=401341409]
+visible = false
+offset_left = 851.0
+offset_top = 503.0
+offset_right = 1006.0
+offset_bottom = 526.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "Press G to draw gun"
 
 [connection signal="timeout" from="CanvasLayer/MessageTimer" to="." method="_on_message_timer_timeout"]

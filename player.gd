@@ -4,9 +4,8 @@ const JUMP_VELOCITY = 4.5
 const GRAVITY = 9.8
 const MOUSE_SENSITIVITY = 0.002
 
-var skip_intro = false # make false to see intro
-
-var has_key = false
+var skip_intro = true # make false to see intro
+var inventory: Array[String] = []
 var intro_playing = true
 var standing_y = 2.0
 var lying_y = -.05
@@ -18,6 +17,18 @@ var lying_y = -.05
 @onready var message_timer = $CanvasLayer/MessageTimer
 @onready var title_card = $CanvasLayer/TitleCard
 @onready var fade_rect = $CanvasLayer/FadeRect
+@onready var gun_viewmodel = $Head/Camera3D/GunViewmodel
+@onready var gun_prompt = $CanvasLayer/GunPrompt
+var gun_drawn = false
+var gun_prompt_seen = false
+
+
+func add_item(item_name: String):
+	if not inventory.has(item_name):
+		inventory.append(item_name)
+
+func has_item(item_name: String) -> bool:
+	return inventory.has(item_name)
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -66,6 +77,10 @@ func _unhandled_input(event):
 		var collider = interact_ray.get_collider()
 		if collider and collider.has_method("interact"):
 			collider.interact()
+	if event.is_action_pressed("draw_gun") and has_item("gun"):
+		gun_drawn = !gun_drawn
+		gun_viewmodel.visible = gun_drawn
+		gun_prompt_seen = true
 
 func _physics_process(delta):
 	if intro_playing:
@@ -88,6 +103,7 @@ func _physics_process(delta):
 		interact_prompt.visible = true
 	else:
 		interact_prompt.visible = false
+	gun_prompt.visible = has_item("gun") and not gun_prompt_seen
 	move_and_slide()
 
 func sit_up():

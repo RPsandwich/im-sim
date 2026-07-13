@@ -37,6 +37,7 @@
 [ext_resource type="Script" uid="uid://2ywiusveo8hx" path="res://drawer_2.gd" id="23_k83mh"]
 [ext_resource type="Script" uid="uid://cycfoaj8x3iyr" path="res://suitcase.gd" id="23_mc2jv"]
 [ext_resource type="Script" uid="uid://lrcne8bg5qmg" path="res://abstract_art.gd" id="26_ryup7"]
+[ext_resource type="Script" uid="uid://lcp22r1jr24c" path="res://scenes/safe_open.gd" id="30_8u370"]
 [ext_resource type="Texture2D" uid="uid://bmv1r4y8ioges" path="res://assets/textures/Plastic006_1K-JPG_Color.jpg" id="32_jjr1n"]
 [ext_resource type="Script" uid="uid://d13eavj1ybqu6" path="res://phone_base.gd" id="33_gggvi"]
 [ext_resource type="Texture2D" uid="uid://cncy5ocua70bb" path="res://assets/textures/2139.jpg" id="39_1ew0l"]
@@ -497,6 +498,7 @@ transform = Transform3D(-0.006394813, 0, -0.5999959, 0, 0.6, 0, 0.997415, 0, -0.
 use_collision = true
 size = Vector3(0.2, 0.75390625, 1.2)
 material = SubResource("StandardMaterial3D_jjr1n")
+script = ExtResource("30_8u370")
 
 [node name="Dresser" type="Node3D" parent="." unique_id=1264682867]
 

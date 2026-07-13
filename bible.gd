@@ -1,11 +1,8 @@
 extends CSGBox3D
-
 var already_taken = false
 var is_open = false
-
 @onready var hinge = $Bible_Hinge
 @onready var bible_sound = $BibleSound
-
 func interact():
 	var player = get_tree().get_first_node_in_group("player")
 	
@@ -13,7 +10,6 @@ func interact():
 		open_bible(player)
 	else:
 		player.show_message("The Bible is empty.")
-
 func open_bible(player):
 	is_open = true
 	bible_sound.play()
@@ -22,7 +18,7 @@ func open_bible(player):
 	
 	if not already_taken:
 		already_taken = true
-		player.has_key = true
-		player.show_message("You found a key hidden in the Bible!")
+		player.add_item("key")
+		player.show_message("I found a key hidden in the Bible.")
 	else:
 		player.show_message("The Bible is empty.")
