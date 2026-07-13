@@ -42,7 +42,19 @@
 [ext_resource type="Texture2D" uid="uid://cncy5ocua70bb" path="res://assets/textures/2139.jpg" id="39_1ew0l"]
 [ext_resource type="Script" uid="uid://ce4ymy45hbj6v" path="res://scenes/vent.gd" id="41_8u370"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6oujy"]
+sky_top_color = Color(0.039215688, 0.039215688, 0.09803922, 1)
+sky_horizon_color = Color(0.11764706, 0.11764706, 0.1764706, 1)
+ground_bottom_color = Color(0.039215688, 0.039215688, 0.09803922, 1)
+ground_horizon_color = Color(0.11764706, 0.11764706, 0.1764706, 1)
+energy_multiplier = 0.4
+
+[sub_resource type="Sky" id="Sky_rga7q"]
+sky_material = SubResource("ProceduralSkyMaterial_6oujy")
+
 [sub_resource type="Environment" id="Environment_f3sb7"]
+background_mode = 2
+sky = SubResource("Sky_rga7q")
 ambient_light_source = 2
 ambient_light_color = Color(0.18359056, 0.18359041, 0.18359044, 1)
 ambient_light_energy = 0.2
