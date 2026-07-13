@@ -1,5 +1,6 @@
 extends CSGBox3D
 
+@onready var gun_prop = %Revolver
 var already_taken = false
 
 func interact():
@@ -10,5 +11,6 @@ func interact():
 		return
 	
 	already_taken = true
+	gun_prop.visible = false
 	player.add_item("gun")
 	player.show_message("Found my \"valuables\" (a gun).")
