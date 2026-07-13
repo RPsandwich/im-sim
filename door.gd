@@ -1,5 +1,8 @@
 extends CSGBox3D
 var is_open = false
+
+@onready var hinge = get_parent()
+
 func interact():
 	var player = get_tree().get_first_node_in_group("player")
 	
@@ -11,6 +14,6 @@ func interact():
 		return
 	is_open = true
 	
-	# TODO: actual door-open behavior goes here
-	# e.g. a tween to swing/slide the door, a sound, maybe a scene transition
+	var tween = create_tween()
+	tween.tween_property(hinge, "rotation:y", deg_to_rad(-100), 1.0)
 	player.show_message("The door creaks open.")

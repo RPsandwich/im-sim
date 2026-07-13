@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://bmv1r4y8ioges" path="res://assets/textures/Plastic006_1K-JPG_Color.jpg" id="32_jjr1n"]
 [ext_resource type="Script" uid="uid://d13eavj1ybqu6" path="res://phone_base.gd" id="33_gggvi"]
 [ext_resource type="Texture2D" uid="uid://cncy5ocua70bb" path="res://assets/textures/2139.jpg" id="39_1ew0l"]
+[ext_resource type="Script" uid="uid://ce4ymy45hbj6v" path="res://scenes/vent.gd" id="41_8u370"]
 
 [sub_resource type="Environment" id="Environment_f3sb7"]
 ambient_light_source = 2
@@ -54,6 +55,15 @@ albedo_texture = ExtResource("2_pkg7o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_036b0"]
 albedo_texture = ExtResource("2_pkg7o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u370"]
+transparency = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rga7q"]
+transparency = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6oujy"]
+transparency = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwbse"]
 albedo_texture = ExtResource("2_pkg7o")
@@ -570,6 +580,21 @@ use_collision = true
 size = Vector3(0.2, 1.5079346, 2.140564)
 material = SubResource("StandardMaterial3D_036b0")
 
+[node name="Door_Frame1" type="CSGBox3D" parent="Room_Shell/Wall_East" unique_id=358309497]
+transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.4076182, -3.3817372e-08, 5.007338, 1.7460674, -1.0400289)
+size = Vector3(0.1, 0.15, 4.0665283)
+material = SubResource("StandardMaterial3D_8u370")
+
+[node name="Door_Frame2" type="CSGBox3D" parent="Room_Shell/Wall_East" unique_id=995416666]
+transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.4076182, -3.3817372e-08, 4.99657, 1.7512884, -3.0563939)
+size = Vector3(0.1, 0.15, 4.078125)
+material = SubResource("StandardMaterial3D_rga7q")
+
+[node name="Door_Frame3" type="CSGBox3D" parent="Room_Shell/Wall_East" unique_id=937886580]
+transform = Transform3D(2.5656726, 0, 0, 0, 0.54218006, -7.1054274e-15, 0, 1.7763568e-15, 0.6769448, 5.0027447, 3.5375657, -2.0492697)
+size = Vector3(0.1, 0.18937989, 3.03656)
+material = SubResource("StandardMaterial3D_6oujy")
+
 [node name="Wall_West" type="Node3D" parent="Room_Shell" unique_id=1767491443]
 
 [node name="Wall_West1" type="CSGBox3D" parent="Room_Shell/Wall_West" unique_id=921311674]
@@ -682,16 +707,6 @@ transform = Transform3D(2.5656726, 0, 0, 0, 0.47440758, 0, 0, 0, 0.90041614, -4.
 size = Vector3(0.1, 0.15, 4.1191406)
 material = SubResource("StandardMaterial3D_whwke")
 
-[node name="Window_Frame6" type="CSGBox3D" parent="Window" unique_id=358309497]
-transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.47440752, -3.935844e-08, 5.007338, 1.7460674, -1.2104405)
-size = Vector3(0.1, 0.15, 4.0665283)
-material = SubResource("StandardMaterial3D_whwke")
-
-[node name="Window_Frame7" type="CSGBox3D" parent="Window" unique_id=995416666]
-transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.47440752, -3.935844e-08, 4.99657, 1.7512884, -3.5571923)
-size = Vector3(0.1, 0.15, 4.078125)
-material = SubResource("StandardMaterial3D_whwke")
-
 [node name="Window_Frame4" type="CSGBox3D" parent="Window" unique_id=106241025]
 transform = Transform3D(2.5656726, 0, 0, 0, -2.3699446e-08, 0.78786415, 0, -0.54218006, -3.443863e-08, -4.996011, 2.8274105, 1.8023672)
 size = Vector3(0.1, 0.19072266, 2.1547852)
@@ -700,11 +715,6 @@ material = SubResource("StandardMaterial3D_whwke")
 [node name="Window_Frame5" type="CSGBox3D" parent="Window" unique_id=687347005]
 transform = Transform3D(2.5656726, 0, 0, 0, -2.3699446e-08, 0.78786415, 0, -0.54218006, -3.443863e-08, -4.996011, 2.8274105, -1.7914714)
 size = Vector3(0.1, 0.18937989, 2.1547852)
-material = SubResource("StandardMaterial3D_whwke")
-
-[node name="Window_Frame8" type="CSGBox3D" parent="Window" unique_id=937886580]
-transform = Transform3D(2.5656726, 0, 0, 0, 0.54218006, -7.1054274e-15, 0, 2.0674177e-15, 0.787864, 5.0027447, 3.5375655, -2.385048)
-size = Vector3(0.1, 0.18937989, 3.03656)
 material = SubResource("StandardMaterial3D_whwke")
 
 [node name="Window_Glass" type="CSGBox3D" parent="Window" unique_id=1450973191]
@@ -731,15 +741,18 @@ radius = 0.05
 height = 4.911522
 material = SubResource("StandardMaterial3D_oenf1")
 
-[node name="Door" type="CSGBox3D" parent="." unique_id=1175837534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.7438098, -2.0623744)
+[node name="Door_Hinge" type="Node3D" parent="." unique_id=2104738979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.7438098, -3.0571113)
+
+[node name="Door" type="CSGBox3D" parent="Door_Hinge" unique_id=1175837534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9947369)
 use_collision = true
 size = Vector3(0.15, 3.4721375, 1.9665039)
 material = SubResource("StandardMaterial3D_kq25h")
 script = ExtResource("12_qktwf")
 
-[node name="Doorknob" type="CSGSphere3D" parent="Door" unique_id=1455636969]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13984156, 0.024609208, 0.77387905)
+[node name="Doorknob" type="CSGSphere3D" parent="Door_Hinge" unique_id=1455636969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13984156, 0.024609208, 1.768616)
 radius = 0.07
 material = SubResource("StandardMaterial3D_k8iv3")
 
@@ -1044,8 +1057,10 @@ material = SubResource("StandardMaterial3D_f3fvg")
 
 [node name="Vent" type="CSGBox3D" parent="." unique_id=390837576]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9651418, 3.960794, -4.892796)
+use_collision = true
 size = Vector3(1, 1, 0.02)
 material = SubResource("StandardMaterial3D_hldgp")
+script = ExtResource("41_8u370")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1348538616]
 
