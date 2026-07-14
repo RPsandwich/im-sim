@@ -22,8 +22,11 @@ func interact():
 	await get_tree().create_timer(0.5).timeout
 	var lamp = get_tree().get_first_node_in_group("lamp")
 	if lamp:
-		lamp.interact()
-	
+		if not lamp.is_on:
+			lamp.interact()  # lamp was off — turn it on first
+			await get_tree().create_timer(0.3).timeout  # let it actually render before flickering
+		lamp.interact()  # now flicker off
+
 	await get_tree().create_timer(2.0).timeout
 	if lamp:
-		lamp.interact()
+		lamp.interact()  # flicker back on

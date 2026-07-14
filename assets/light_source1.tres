@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cgg08i3d52g6r"]
+
+[ext_resource type="Texture2D" uid="uid://d1q3622j2d1i5" path="res://assets/textures/Fabric001_1K-JPG_Color.jpg" id="1_8l3xv"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_8l3xv")
+emission_enabled = true
+emission = Color(1, 1, 0.7490196, 1)
+emission_energy_multiplier = 1.5

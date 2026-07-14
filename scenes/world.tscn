@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://drnanxym0hdmr" path="res://lamp_shade.gd" id="11_my276"]
 [ext_resource type="Texture2D" uid="uid://4tqk0guyiqvq" path="res://assets/textures/bible_cover_rotated.png" id="12_2u3nc"]
 [ext_resource type="Script" uid="uid://d3g18swv112rv" path="res://door.gd" id="12_qktwf"]
+[ext_resource type="Material" uid="uid://cgg08i3d52g6r" path="res://assets/light_source1.tres" id="12_rga7q"]
 [ext_resource type="Script" uid="uid://bwioyqrr3af2n" path="res://bible.gd" id="12_udxuc"]
 [ext_resource type="Texture2D" uid="uid://dq0y8rv1gsy2o" path="res://assets/textures/Metal029_1K-JPG_Color.jpg" id="13_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://d01giqufadwme" path="res://assets/textures/photo-metal-texture-pattern.jpg" id="14_hiqwa"]
@@ -103,13 +104,6 @@ albedo_texture = ExtResource("9_ioo17")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65fxx"]
 albedo_texture = ExtResource("9_ioo17")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70uel"]
-transparency = 1
-albedo_texture = ExtResource("6_dwbse")
-emission_enabled = true
-emission = Color(1, 1, 0.7490196, 1)
-emission_energy_multiplier = 1.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_whwke"]
 transparency = 1
@@ -541,6 +535,13 @@ albedo_texture = ExtResource("11_k3n1d")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_we2e5"]
 albedo_texture = ExtResource("11_k3n1d")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hi6a0"]
+transparency = 1
+albedo_texture = ExtResource("6_dwbse")
+emission_enabled = true
+emission = Color(1, 1, 0.7490196, 1)
+emission_energy_multiplier = 1.5
+
 [node name="World" type="Node3D" unique_id=1620539426]
 
 [node name="AmbientAudio" type="AudioStreamPlayer" parent="." unique_id=1102422780]
@@ -553,189 +554,186 @@ transform = Transform3D(0.99999, -6.863954e-09, 0.0044793487, 6.861456e-09, 1, 5
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=469424794]
 environment = SubResource("Environment_f3sb7")
 
-[node name="Room_Shell" type="Node3D" parent="." unique_id=1603456740]
+[node name="HotelRoom" type="Node3D" parent="." unique_id=675886958]
 
-[node name="Wall_North" type="CSGBox3D" parent="Room_Shell" unique_id=2087164698]
+[node name="Room_Shell" type="Node3D" parent="HotelRoom" unique_id=1603456740]
+
+[node name="Wall_North" type="CSGBox3D" parent="HotelRoom/Room_Shell" unique_id=2087164698]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -5)
 use_collision = true
 size = Vector3(10, 5, 0.2)
 material = SubResource("StandardMaterial3D_tlwt5")
 
-[node name="Wall_SafeCutout" type="CSGBox3D" parent="Room_Shell/Wall_North" unique_id=1281521409]
+[node name="Wall_SafeCutout" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_North" unique_id=1281521409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3542984, 0.33614445, -0.037858486)
 operation = 2
 size = Vector3(0.73115236, 0.42226562, 0.28635255)
 
-[node name="Wall_South" type="CSGBox3D" parent="Room_Shell" unique_id=2091075509]
+[node name="Wall_South" type="CSGBox3D" parent="HotelRoom/Room_Shell" unique_id=2091075509]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 5)
 use_collision = true
 size = Vector3(10, 5, 0.2)
 material = SubResource("StandardMaterial3D_aqk2v")
 
-[node name="Wall_East" type="Node3D" parent="Room_Shell" unique_id=1295580296]
+[node name="Wall_East" type="Node3D" parent="HotelRoom/Room_Shell" unique_id=1295580296]
 
-[node name="Wall_East_Big" type="CSGBox3D" parent="Room_Shell/Wall_East" unique_id=1897617637]
+[node name="Wall_East_Big" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_East" unique_id=1897617637]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 1.9411712)
 use_collision = true
 size = Vector3(0.2, 5, 6)
 material = SubResource("StandardMaterial3D_036b0")
 
-[node name="Wall_East_SmallBig2" type="CSGBox3D" parent="Room_Shell/Wall_East" unique_id=588012576]
+[node name="Wall_East_SmallBig2" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_East" unique_id=588012576]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -4.558829)
 use_collision = true
 size = Vector3(0.2, 5, 3)
 material = SubResource("StandardMaterial3D_036b0")
 
-[node name="Wall_East_SmallBig3" type="CSGBox3D" parent="Room_Shell/Wall_East" unique_id=2040824467]
+[node name="Wall_East_SmallBig3" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_East" unique_id=2040824467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.2460327, -2.0628266)
 use_collision = true
 size = Vector3(0.2, 1.5079346, 2.140564)
 material = SubResource("StandardMaterial3D_036b0")
 
-[node name="Door_Frame1" type="CSGBox3D" parent="Room_Shell/Wall_East" unique_id=358309497]
+[node name="Door_Frame1" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_East" unique_id=358309497]
 transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.4076182, -3.3817372e-08, 5.007338, 1.7460674, -1.0400289)
 size = Vector3(0.1, 0.15, 4.0665283)
 material = SubResource("StandardMaterial3D_8u370")
 
-[node name="Door_Frame2" type="CSGBox3D" parent="Room_Shell/Wall_East" unique_id=995416666]
+[node name="Door_Frame2" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_East" unique_id=995416666]
 transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.4076182, -3.3817372e-08, 4.99657, 1.7512884, -3.0563939)
 size = Vector3(0.1, 0.15, 4.078125)
 material = SubResource("StandardMaterial3D_rga7q")
 
-[node name="Door_Frame3" type="CSGBox3D" parent="Room_Shell/Wall_East" unique_id=937886580]
+[node name="Door_Frame3" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_East" unique_id=937886580]
 transform = Transform3D(2.5656726, 0, 0, 0, 0.54218006, -7.1054274e-15, 0, 1.7763568e-15, 0.6769448, 5.0027447, 3.5375657, -2.0492697)
 size = Vector3(0.1, 0.18937989, 3.03656)
 material = SubResource("StandardMaterial3D_6oujy")
 
-[node name="Wall_West" type="Node3D" parent="Room_Shell" unique_id=1767491443]
+[node name="Wall_West" type="Node3D" parent="HotelRoom/Room_Shell" unique_id=1767491443]
 
-[node name="Wall_West1" type="CSGBox3D" parent="Room_Shell/Wall_West" unique_id=921311674]
+[node name="Wall_West1" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_West" unique_id=921311674]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.39999998, -5, 2.5, 3.2608397)
 use_collision = true
 size = Vector3(0.2, 5, 8.695801)
 material = SubResource("StandardMaterial3D_dwbse")
 
-[node name="Wall_West2" type="CSGBox3D" parent="Room_Shell/Wall_West" unique_id=380533317]
+[node name="Wall_West2" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_West" unique_id=380533317]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.39999998, -5, 2.5, -3.280902)
 use_collision = true
 size = Vector3(0.2, 5, 8.5954895)
 material = SubResource("StandardMaterial3D_dwbse")
 
-[node name="Wall_West3" type="CSGBox3D" parent="Room_Shell/Wall_West" unique_id=1119237824]
+[node name="Wall_West3" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_West" unique_id=1119237824]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.39999998, -5, 1.0053711, 0.014550867)
 use_collision = true
 size = Vector3(0.2, 2.0107422, 11.233887)
 material = SubResource("StandardMaterial3D_dwbse")
 
-[node name="Wall_West4" type="CSGBox3D" parent="Room_Shell/Wall_West" unique_id=1969519530]
+[node name="Wall_West4" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_West" unique_id=1969519530]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.39999998, -5.0019956, 4.3354735, 0.027634371)
 use_collision = true
 size = Vector3(0.2, 1.3178711, 11.437134)
 material = SubResource("StandardMaterial3D_dwbse")
 
-[node name="Floor" type="CSGBox3D" parent="Room_Shell" unique_id=1955923559]
+[node name="Floor" type="CSGBox3D" parent="HotelRoom/Room_Shell" unique_id=1955923559]
 use_collision = true
 size = Vector3(10, 0.2, 10)
 material = SubResource("StandardMaterial3D_f3sb7")
 
-[node name="Ceiling" type="CSGBox3D" parent="Room_Shell" unique_id=1470881541]
+[node name="Ceiling" type="CSGBox3D" parent="HotelRoom/Room_Shell" unique_id=1470881541]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 use_collision = true
 size = Vector3(10, 0.2, 10)
 material = SubResource("StandardMaterial3D_fj7yv")
 
-[node name="Hallway_Ceiling1" type="CSGBox3D" parent="Room_Shell" unique_id=701833267]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, -1)
-use_collision = true
-size = Vector3(10, 0.2, 10)
-material = SubResource("StandardMaterial3D_fj7yv")
-
-[node name="Bed" type="Node3D" parent="." unique_id=98737330]
+[node name="Bed" type="Node3D" parent="HotelRoom" unique_id=98737330]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101974964, 0)
 
-[node name="Bed_Pillow" type="CSGSphere3D" parent="Bed" unique_id=120760285]
+[node name="Bed_Pillow" type="CSGSphere3D" parent="HotelRoom/Bed" unique_id=120760285]
 transform = Transform3D(1.2, 0, 0, 0, 0.3, 0, 0, 0, 0.6, 0, 0.9860647, 4.2403164)
 radius = 1.0
 material = SubResource("StandardMaterial3D_wse8f")
 
-[node name="Bed_Mattress" type="CSGBox3D" parent="Bed" unique_id=1983291514]
+[node name="Bed_Mattress" type="CSGBox3D" parent="HotelRoom/Bed" unique_id=1983291514]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4731965, 2.401349)
 use_collision = true
 size = Vector3(3, 0.5, 5)
 material = SubResource("StandardMaterial3D_ioo17")
 script = ExtResource("7_4h6ng")
 
-[node name="Bed_Frame" type="CSGBox3D" parent="Bed" unique_id=1724332464]
+[node name="Bed_Frame" type="CSGBox3D" parent="HotelRoom/Bed" unique_id=1724332464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 2.352765)
 use_collision = true
 size = Vector3(3.1000001, 0.5, 5.097168)
 material = SubResource("StandardMaterial3D_mskic")
 
-[node name="Bed_Headboard" type="CSGBox3D" parent="Bed" unique_id=1923345909]
+[node name="Bed_Headboard" type="CSGBox3D" parent="HotelRoom/Bed" unique_id=1923345909]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8757324, 4.8097396)
 use_collision = true
 size = Vector3(3.1875, 1.7485352, 0.2)
 material = SubResource("StandardMaterial3D_ic0uy")
 
-[node name="Lamp" type="Node3D" parent="." unique_id=115731457 groups=["lamp"]]
+[node name="Lamp" type="Node3D" parent="HotelRoom" unique_id=115731457 groups=["lamp"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26644087, 0.1779089, 0)
 script = ExtResource("9_6ah6f")
 
-[node name="Lamp_Base" type="CSGCylinder3D" parent="Lamp" unique_id=1618276567]
+[node name="Lamp_Base" type="CSGCylinder3D" parent="HotelRoom/Lamp" unique_id=1618276567]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2505639, 0.9837152, 4.3352356)
 use_collision = true
 radius = 0.25
 height = 0.1
 material = SubResource("StandardMaterial3D_2o6r5")
 
-[node name="Lamp_Pole" type="CSGCylinder3D" parent="Lamp" unique_id=366933048]
+[node name="Lamp_Pole" type="CSGCylinder3D" parent="HotelRoom/Lamp" unique_id=366933048]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2433467, 1.4383327, 4.3282027)
 use_collision = true
 radius = 0.05
 height = 0.8
 material = SubResource("StandardMaterial3D_65fxx")
 
-[node name="Lamp_Shade" type="CSGCylinder3D" parent="Lamp" unique_id=1995254971]
+[node name="Lamp_Shade" type="CSGCylinder3D" parent="HotelRoom/Lamp" unique_id=1995254971]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2433467, 1.8086349, 4.3282027)
 use_collision = true
 radius = 0.35
 height = 0.4
-material = SubResource("StandardMaterial3D_70uel")
+material = ExtResource("12_rga7q")
 script = ExtResource("11_my276")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Lamp" unique_id=1341646101]
+[node name="OmniLight3D" type="OmniLight3D" parent="HotelRoom/Lamp" unique_id=1341646101]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2201574, 1.7462566, 4.3234096)
 light_color = Color(0.99999994, 0.850634, 0.5968582, 1)
 light_energy = 2.5
 omni_range = 15.0
 
-[node name="LampClick" type="AudioStreamPlayer" parent="Lamp" unique_id=1015492004]
+[node name="LampClick" type="AudioStreamPlayer3D" parent="HotelRoom/Lamp" unique_id=1234063737]
 stream = ExtResource("11_g1i3r")
+unit_size = 4.0
 
-[node name="Window" type="Node3D" parent="." unique_id=1411950743]
+[node name="Window" type="Node3D" parent="HotelRoom" unique_id=1411950743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.85921526, 0, 0, 0)
 
-[node name="Window_Frame2" type="CSGBox3D" parent="Window" unique_id=1046830570]
+[node name="Window_Frame2" type="CSGBox3D" parent="HotelRoom/Window" unique_id=1046830570]
 transform = Transform3D(2.5656726, 0, 0, 0, 0.47440758, 0, 0, 0, 0.90041614, -4.996011, 3.6890788, 0.0071611875)
 size = Vector3(0.1, 0.15, 4.1191406)
 material = SubResource("StandardMaterial3D_whwke")
 
-[node name="Window_Frame3" type="CSGBox3D" parent="Window" unique_id=1886521285]
+[node name="Window_Frame3" type="CSGBox3D" parent="HotelRoom/Window" unique_id=1886521285]
 transform = Transform3D(2.5656726, 0, 0, 0, 0.47440758, 0, 0, 0, 0.90041614, -4.996011, 2.0131946, 0.0071611875)
 size = Vector3(0.1, 0.15, 4.1191406)
 material = SubResource("StandardMaterial3D_whwke")
 
-[node name="Window_Frame4" type="CSGBox3D" parent="Window" unique_id=106241025]
+[node name="Window_Frame4" type="CSGBox3D" parent="HotelRoom/Window" unique_id=106241025]
 transform = Transform3D(2.5656726, 0, 0, 0, -2.3699446e-08, 0.78786415, 0, -0.54218006, -3.443863e-08, -4.996011, 2.8274105, 1.8023672)
 size = Vector3(0.1, 0.19072266, 2.1547852)
 material = SubResource("StandardMaterial3D_whwke")
 
-[node name="Window_Frame5" type="CSGBox3D" parent="Window" unique_id=687347005]
+[node name="Window_Frame5" type="CSGBox3D" parent="HotelRoom/Window" unique_id=687347005]
 transform = Transform3D(2.5656726, 0, 0, 0, -2.3699446e-08, 0.78786415, 0, -0.54218006, -3.443863e-08, -4.996011, 2.8274105, -1.7914714)
 size = Vector3(0.1, 0.18937989, 2.1547852)
 material = SubResource("StandardMaterial3D_whwke")
 
-[node name="Window_Glass" type="CSGBox3D" parent="Window" unique_id=1450973191]
+[node name="Window_Glass" type="CSGBox3D" parent="HotelRoom/Window" unique_id=1450973191]
 transform = Transform3D(0.92279696, 0, 0, 0, -4.902322e-08, -0.7382375, 0, 1.1215206, -3.2269384e-08, -5.060215, 2.821691, -0.034407217)
 material_override = SubResource("StandardMaterial3D_wukud")
 use_collision = true
@@ -743,114 +741,114 @@ size = Vector3(0.05, 3.4470215, 4.458496)
 material = SubResource("StandardMaterial3D_bc84e")
 script = ExtResource("11_bh8nc")
 
-[node name="Curtain_Left" type="CSGBox3D" parent="Window" unique_id=321532367]
+[node name="Curtain_Left" type="CSGBox3D" parent="HotelRoom/Window" unique_id=321532367]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7354603, 2.296906, 1.6099815)
 size = Vector3(0.1, 4.5291443, 0.8)
 material = SubResource("StandardMaterial3D_thvds")
 
-[node name="Curtain_Left2" type="CSGBox3D" parent="Window" unique_id=706827031]
+[node name="Curtain_Left2" type="CSGBox3D" parent="HotelRoom/Window" unique_id=706827031]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7354603, 2.2913976, -1.6031103)
 size = Vector3(0.1, 4.580017, 0.8)
 material = SubResource("StandardMaterial3D_thvds")
 
-[node name="Curtain_Rod" type="CSGCylinder3D" parent="Window" unique_id=2008306303]
+[node name="Curtain_Rod" type="CSGCylinder3D" parent="HotelRoom/Window" unique_id=2008306303]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -4.7510643, 4.281557, -0.024461515)
 radius = 0.05
 height = 4.911522
 material = SubResource("StandardMaterial3D_oenf1")
 
-[node name="Door_Hinge" type="Node3D" parent="." unique_id=2104738979]
+[node name="Door_Hinge" type="Node3D" parent="HotelRoom" unique_id=2104738979]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.7438098, -3.0571113)
 
-[node name="Door" type="CSGBox3D" parent="Door_Hinge" unique_id=1175837534]
+[node name="Door" type="CSGBox3D" parent="HotelRoom/Door_Hinge" unique_id=1175837534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9947369)
 use_collision = true
 size = Vector3(0.15, 3.4721375, 1.9665039)
 material = SubResource("StandardMaterial3D_kq25h")
 script = ExtResource("12_qktwf")
 
-[node name="Doorknob" type="CSGSphere3D" parent="Door_Hinge" unique_id=1455636969]
+[node name="Doorknob" type="CSGSphere3D" parent="HotelRoom/Door_Hinge" unique_id=1455636969]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13984156, 0.024609208, 1.768616)
 radius = 0.07
 material = SubResource("StandardMaterial3D_k8iv3")
 
-[node name="Nightstand_R" type="CSGBox3D" parent="." unique_id=198563913]
+[node name="Nightstand_R" type="CSGBox3D" parent="HotelRoom" unique_id=198563913]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2260005, 0.6022599, 4.391383)
 use_collision = true
 size = Vector3(1.2, 1, 1.2)
 material = SubResource("StandardMaterial3D_k3n1d")
 
-[node name="Nightstand_L2" type="CSGBox3D" parent="." unique_id=1705797126]
+[node name="Nightstand_L2" type="CSGBox3D" parent="HotelRoom" unique_id=1705797126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2127473, 0.6022599, 4.391383)
 use_collision = true
 size = Vector3(1.2, 1, 1.2)
 material = SubResource("StandardMaterial3D_k3n1d")
 
-[node name="Bible" type="CSGBox3D" parent="." unique_id=1006641102]
+[node name="Bible" type="CSGBox3D" parent="HotelRoom" unique_id=1006641102]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9998107, 1.1820189, 4.3405128)
 use_collision = true
 size = Vector3(0.4, 0.15, 0.55)
 material = SubResource("StandardMaterial3D_wgpkr")
 script = ExtResource("12_udxuc")
 
-[node name="Bible_Hinge" type="Node3D" parent="Bible" unique_id=1159585115]
+[node name="Bible_Hinge" type="Node3D" parent="HotelRoom/Bible" unique_id=1159585115]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20626378, 0.07952368, 0)
 
-[node name="Bible_Cover" type="CSGBox3D" parent="Bible/Bible_Hinge" unique_id=125416032]
+[node name="Bible_Cover" type="CSGBox3D" parent="HotelRoom/Bible/Bible_Hinge" unique_id=125416032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20626378, 0.0075399876, 0)
 size = Vector3(0.4, 0.008471683, 0.55)
 material = SubResource("StandardMaterial3D_o3ebs")
 
-[node name="BibleSound" type="AudioStreamPlayer" parent="Bible" unique_id=816046612]
+[node name="BibleSound" type="AudioStreamPlayer" parent="HotelRoom/Bible" unique_id=816046612]
 stream = ExtResource("20_my276")
 
-[node name="Bible_Hollowed" type="CSGBox3D" parent="." unique_id=1420856839]
+[node name="Bible_Hollowed" type="CSGBox3D" parent="HotelRoom" unique_id=1420856839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9998107, 1.2604487, 4.3405128)
 material_override = SubResource("StandardMaterial3D_bh8nc")
 size = Vector3(0.4, 0.008471683, 0.55)
 material = SubResource("StandardMaterial3D_o3ebs")
 
-[node name="Painting" type="Node3D" parent="." unique_id=834285346]
+[node name="Painting" type="Node3D" parent="HotelRoom" unique_id=834285346]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24365282, 0)
 script = ExtResource("15_26xuy")
 
-[node name="Painting_Canvas" type="CSGBox3D" parent="Painting" unique_id=1509094444]
+[node name="Painting_Canvas" type="CSGBox3D" parent="HotelRoom/Painting" unique_id=1509094444]
 transform = Transform3D(-0.0064276964, 0.5999959, 2.6226298e-08, 0, -2.6227193e-08, 0.6, 1.0025439, 0.0038468055, 1.6814497e-10, -3.3383558, 2.7256467, -4.8426933)
 use_collision = true
 size = Vector3(0.1, 2.9, 1.9)
 material = SubResource("StandardMaterial3D_2u3nc")
 script = ExtResource("16_cbp6q")
 
-[node name="Painting_Frame" type="CSGBox3D" parent="Painting" unique_id=1019234583]
+[node name="Painting_Frame" type="CSGBox3D" parent="HotelRoom/Painting" unique_id=1019234583]
 transform = Transform3D(-0.0064276964, -3.5704772e-13, -0.5999959, 0, 0.6, 3.5882408e-13, 1.0025439, -4.246603e-15, -0.0038468055, -3.3384626, 2.7299542, -4.845472)
 use_collision = true
 size = Vector3(0.1, 2, 3)
 material = SubResource("StandardMaterial3D_hiqwa")
 
-[node name="Painting2" type="Node3D" parent="." unique_id=1351613967]
+[node name="Painting2" type="Node3D" parent="HotelRoom" unique_id=1351613967]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.0065841675, 0.24365282, 5.2035155)
 
-[node name="Painting_Canvas" type="CSGBox3D" parent="Painting2" unique_id=1643000294]
+[node name="Painting_Canvas" type="CSGBox3D" parent="HotelRoom/Painting2" unique_id=1643000294]
 transform = Transform3D(-0.0064276964, 0.5999959, 2.6226298e-08, 0, -2.6227193e-08, 0.6, 1.0025439, 0.0038468055, 1.6814497e-10, -3.3383558, 2.7256467, -4.8426933)
 use_collision = true
 size = Vector3(0.1, 2.9, 1.9)
 material = SubResource("StandardMaterial3D_yx0jh")
 script = ExtResource("26_ryup7")
 
-[node name="Painting_Frame" type="CSGBox3D" parent="Painting2" unique_id=2081393817]
+[node name="Painting_Frame" type="CSGBox3D" parent="HotelRoom/Painting2" unique_id=2081393817]
 transform = Transform3D(-0.0064276964, -3.5704772e-13, -0.5999959, 0, 0.6, 3.5882408e-13, 1.0025439, -4.246603e-15, -0.0038468055, -3.3384626, 2.7299542, -4.845472)
 use_collision = true
 size = Vector3(0.1, 2, 3)
 material = SubResource("StandardMaterial3D_hiqwa")
 
-[node name="Safe" type="CSGBox3D" parent="." unique_id=1036851698]
+[node name="Safe" type="CSGBox3D" parent="HotelRoom" unique_id=1036851698]
 transform = Transform3D(-0.006394813, 0, -0.5999959, 0, 0.6, 0, 0.997415, 0, -0.0038468055, -3.3457887, 2.8397946, -4.989637)
 use_collision = true
 size = Vector3(0.2, 0.75390625, 1.243042)
 material = SubResource("StandardMaterial3D_udxuc")
 script = ExtResource("19_wukud")
 
-[node name="Safe_open" type="CSGBox3D" parent="." unique_id=1866281828]
+[node name="Safe_open" type="CSGBox3D" parent="HotelRoom" unique_id=1866281828]
 transform = Transform3D(-0.006394813, 0, -0.5999959, 0, 0.6, 0, 0.997415, 0, -0.0038468055, -3.3379152, 2.6345756, -4.9972167)
 visible = false
 use_collision = true
@@ -858,7 +856,7 @@ size = Vector3(0.2, 0.75390625, 1.2)
 material = SubResource("StandardMaterial3D_e75v4")
 script = ExtResource("30_8u370")
 
-[node name="Revolver" type="MeshInstance3D" parent="." unique_id=1575080903]
+[node name="Revolver" type="MeshInstance3D" parent="HotelRoom" unique_id=1575080903]
 unique_name_in_owner = true
 transform = Transform3D(0.000893417, -0.00044918215, 6.457473e-06, 0.0004262049, 0.00085208326, 0.00030381515, -0.00014197064, -0.00026868135, 0.0009527092, -3.3208215, 2.6887326, -5.1342134)
 mesh = SubResource("ArrayMesh_8u370")
@@ -876,260 +874,281 @@ surface_material_override/10 = SubResource("StandardMaterial3D_qhqgy")
 surface_material_override/11 = SubResource("StandardMaterial3D_qhqgy")
 surface_material_override/12 = SubResource("StandardMaterial3D_qhqgy")
 
-[node name="Dresser" type="Node3D" parent="." unique_id=1264682867]
+[node name="Dresser" type="Node3D" parent="HotelRoom" unique_id=1264682867]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10891974, 0)
 
-[node name="Dresser_Base" type="CSGBox3D" parent="Dresser" unique_id=516601387]
+[node name="Dresser_Base" type="CSGBox3D" parent="HotelRoom/Dresser" unique_id=516601387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9987483, -4.456111)
 use_collision = true
 size = Vector3(4, 2, 1)
 material = SubResource("StandardMaterial3D_v8wql")
 
-[node name="Drawer_1" type="CSGBox3D" parent="Dresser" unique_id=823653989]
+[node name="Drawer_1" type="CSGBox3D" parent="HotelRoom/Dresser" unique_id=823653989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4832401, -4.363227)
 use_collision = true
 size = Vector3(3.7, 0.5, 1)
 material = SubResource("StandardMaterial3D_v8wql")
 script = ExtResource("23_k83mh")
 
-[node name="Drawer_2" type="CSGBox3D" parent="Dresser" unique_id=2106260015]
+[node name="Drawer_2" type="CSGBox3D" parent="HotelRoom/Dresser" unique_id=2106260015]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48324013, -4.363227)
 use_collision = true
 size = Vector3(3.7, 0.5, 1)
 material = SubResource("StandardMaterial3D_v8wql")
 script = ExtResource("22_o3ebs")
 
-[node name="TV" type="Node3D" parent="." unique_id=316497267]
+[node name="TV" type="Node3D" parent="HotelRoom" unique_id=316497267]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9656415, -4.4415827)
 
-[node name="TV_Frame" type="CSGBox3D" parent="TV" unique_id=1194068809]
+[node name="TV_Frame" type="CSGBox3D" parent="HotelRoom/TV" unique_id=1194068809]
 use_collision = true
 size = Vector3(2, 1.3, 0.15)
 material = SubResource("StandardMaterial3D_ikiii")
 
-[node name="TV_Screen" type="CSGBox3D" parent="TV" unique_id=662327893]
+[node name="TV_Screen" type="CSGBox3D" parent="HotelRoom/TV" unique_id=662327893]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.014391899)
 use_collision = true
 size = Vector3(1.8596191, 1.1748047, 0.15)
 material = SubResource("StandardMaterial3D_26xuy")
 script = ExtResource("22_bo7i5")
 
-[node name="TV_Base" type="CSGBox3D" parent="TV" unique_id=1334260745]
+[node name="TV_Base" type="CSGBox3D" parent="HotelRoom/TV" unique_id=1334260745]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.72626567, 0.0037527084)
 size = Vector3(1, 0.2, 0.08984375)
 material = SubResource("StandardMaterial3D_cbp6q")
 
-[node name="Luggage_Rack" type="Node3D" parent="." unique_id=12773554]
+[node name="Luggage_Rack" type="Node3D" parent="HotelRoom" unique_id=12773554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20521891, 0)
 
-[node name="Suitcase" type="CSGBox3D" parent="Luggage_Rack" unique_id=846620046]
+[node name="Suitcase" type="CSGBox3D" parent="HotelRoom/Luggage_Rack" unique_id=846620046]
 transform = Transform3D(-4.371139e-08, 0.8, 0, -1, -3.4969112e-08, 0, 0, 0, 0.8, 4.5212536, 1.0497973, 2.4902706)
 use_collision = true
 size = Vector3(0.3, 0.8, 1.5)
 material = SubResource("StandardMaterial3D_fxurf")
 script = ExtResource("23_mc2jv")
 
-[node name="Suitcase2" type="CSGBox3D" parent="Luggage_Rack" unique_id=1483287194]
+[node name="Suitcase2" type="CSGBox3D" parent="HotelRoom/Luggage_Rack" unique_id=1483287194]
 transform = Transform3D(-1.0278141e-08, 0.79999995, 0, -0.23513645, -3.496911e-08, 0, 0, 0, 0.8, 4.5212536, 1.0497973, 2.4902706)
 use_collision = true
 size = Vector3(0.3, 0.8330078, 1.5458984)
 material = SubResource("StandardMaterial3D_4h6ng")
 
-[node name="Rack_Surface" type="CSGBox3D" parent="Luggage_Rack" unique_id=812163208]
+[node name="Rack_Surface" type="CSGBox3D" parent="HotelRoom/Luggage_Rack" unique_id=812163208]
 transform = Transform3D(0.97942406, 0, 0, 0, 0.97942406, 0, 0, 0, 0.97942406, 4.7410126, 0.8713205, 2.4937584)
 use_collision = true
 size = Vector3(0.1, 0.05, 1)
 material = SubResource("StandardMaterial3D_bo7i5")
 
-[node name="Rack_Surface2" type="CSGBox3D" parent="Luggage_Rack" unique_id=670920049]
+[node name="Rack_Surface2" type="CSGBox3D" parent="HotelRoom/Luggage_Rack" unique_id=670920049]
 transform = Transform3D(0.97942406, 0, 0, 0, 0.97942406, 0, 0, 0, 0.97942406, 4.2661133, 0.8713205, 2.4937584)
 use_collision = true
 size = Vector3(0.1, 0.05, 1)
 material = SubResource("StandardMaterial3D_mc2jv")
 
-[node name="Rack_Leg_L" type="CSGBox3D" parent="Luggage_Rack" unique_id=1483871899]
+[node name="Rack_Leg_L" type="CSGBox3D" parent="HotelRoom/Luggage_Rack" unique_id=1483871899]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 4.5, 0.3967284, 2.4706752)
 use_collision = true
 size = Vector3(0.6, 1.402, 0.03)
 material = SubResource("StandardMaterial3D_wjb0r")
 
-[node name="Rack_Leg_R" type="CSGBox3D" parent="Luggage_Rack" unique_id=1431216059]
+[node name="Rack_Leg_R" type="CSGBox3D" parent="HotelRoom/Luggage_Rack" unique_id=1431216059]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 4.5, 0.3967284, 2.4748275)
 use_collision = true
 size = Vector3(0.6, 1.4, 0.03)
 material = SubResource("StandardMaterial3D_il2jm")
 
-[node name="Desk" type="Node3D" parent="." unique_id=764500385]
+[node name="Desk" type="Node3D" parent="HotelRoom" unique_id=764500385]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09628272, 0)
 
-[node name="Desk_Top" type="CSGBox3D" parent="Desk" unique_id=1376413626]
+[node name="Desk_Top" type="CSGBox3D" parent="HotelRoom/Desk" unique_id=1376413626]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603446, 1.637697, 3.3545928)
 use_collision = true
 size = Vector3(0.6, 0.15, 3.0909424)
 material = SubResource("StandardMaterial3D_k83mh")
 
-[node name="Desk_leg_L" type="CSGBox3D" parent="Desk" unique_id=145849312]
+[node name="Desk_leg_L" type="CSGBox3D" parent="HotelRoom/Desk" unique_id=145849312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3536325, 0.815, 4.838112)
 use_collision = true
 size = Vector3(0.1, 1.63, 0.1)
 material = SubResource("StandardMaterial3D_k83mh")
 
-[node name="Desk_leg_L2" type="CSGBox3D" parent="Desk" unique_id=139823960]
+[node name="Desk_leg_L2" type="CSGBox3D" parent="HotelRoom/Desk" unique_id=139823960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.812373, 0.815, 4.838112)
 use_collision = true
 size = Vector3(0.1, 1.63, 0.1)
 material = SubResource("StandardMaterial3D_k83mh")
 
-[node name="Desk_leg_R" type="CSGBox3D" parent="Desk" unique_id=8091135]
+[node name="Desk_leg_R" type="CSGBox3D" parent="HotelRoom/Desk" unique_id=8091135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3536325, 0.815, 1.8780603)
 use_collision = true
 size = Vector3(0.1, 1.63, 0.1)
 material = SubResource("StandardMaterial3D_k83mh")
 
-[node name="Desk_leg_R2" type="CSGBox3D" parent="Desk" unique_id=498875883]
+[node name="Desk_leg_R2" type="CSGBox3D" parent="HotelRoom/Desk" unique_id=498875883]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.849112, 0.815, 1.8780603)
 use_collision = true
 size = Vector3(0.1, 1.63, 0.1)
 material = SubResource("StandardMaterial3D_k83mh")
 
-[node name="Chair" type="Node3D" parent="." unique_id=1404389750]
+[node name="Chair" type="Node3D" parent="HotelRoom" unique_id=1404389750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19209182, 0)
 
-[node name="Chair_Seat" type="CSGBox3D" parent="Chair" unique_id=1778513456]
+[node name="Chair_Seat" type="CSGBox3D" parent="HotelRoom/Chair" unique_id=1778513456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.78669, 0.8624364, 3.4898677)
 use_collision = true
 size = Vector3(1, 0.15, 1)
 material = SubResource("StandardMaterial3D_qktwf")
 
-[node name="Chair_Back_1" type="CSGBox3D" parent="Chair" unique_id=1889651794]
+[node name="Chair_Back_1" type="CSGBox3D" parent="HotelRoom/Chair" unique_id=1889651794]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -3.3156683, 1.4086202, 3.9605098)
 use_collision = true
 size = Vector3(1.2, 0.053027347, 0.05871582)
 material = SubResource("StandardMaterial3D_qktwf")
 
-[node name="Chair_Back_2" type="CSGBox3D" parent="Chair" unique_id=262004986]
+[node name="Chair_Back_2" type="CSGBox3D" parent="HotelRoom/Chair" unique_id=262004986]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -3.3156683, 1.4086202, 3.487905)
 use_collision = true
 size = Vector3(1.2, 0.053027347, 0.05871582)
 material = SubResource("StandardMaterial3D_qktwf")
 
-[node name="Chair_Back_3" type="CSGBox3D" parent="Chair" unique_id=1096717156]
+[node name="Chair_Back_3" type="CSGBox3D" parent="HotelRoom/Chair" unique_id=1096717156]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -3.3156683, 1.4086202, 3.7225873)
 use_collision = true
 size = Vector3(1.2, 0.053027347, 0.05871582)
 material = SubResource("StandardMaterial3D_qktwf")
 
-[node name="Chair_Back_4" type="CSGBox3D" parent="Chair" unique_id=967727940]
+[node name="Chair_Back_4" type="CSGBox3D" parent="HotelRoom/Chair" unique_id=967727940]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -3.3156683, 1.4086202, 3.238371)
 use_collision = true
 size = Vector3(1.2, 0.053027347, 0.05871582)
 material = SubResource("StandardMaterial3D_qktwf")
 
-[node name="Chair_Back_5" type="CSGBox3D" parent="Chair" unique_id=1899140348]
+[node name="Chair_Back_5" type="CSGBox3D" parent="HotelRoom/Chair" unique_id=1899140348]
 transform = Transform3D(-4.371139e-08, 1, 0, 4.371139e-08, 1.9106855e-15, 1, 1, 4.371139e-08, -4.371139e-08, -3.3156683, 1.9810683, 3.4916964)
 use_collision = true
 size = Vector3(0.975, 0.053027347, 0.05871582)
 material = SubResource("StandardMaterial3D_qktwf")
 
-[node name="Chair_Back_6" type="CSGBox3D" parent="Chair" unique_id=107757868]
+[node name="Chair_Back_6" type="CSGBox3D" parent="HotelRoom/Chair" unique_id=107757868]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -1.6420282e-15, 1, -3.3156683, 1.4086202, 3.0287561)
 use_collision = true
 size = Vector3(1.2, 0.053027347, 0.05871582)
 material = SubResource("StandardMaterial3D_qktwf")
 
-[node name="Chair_Leg_1" type="CSGBox3D" parent="Chair" unique_id=1706496987]
+[node name="Chair_Leg_1" type="CSGBox3D" parent="HotelRoom/Chair" unique_id=1706496987]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -3.325605, 0.36290094, 3.036477)
 use_collision = true
 size = Vector3(0.9147461, 0.07290039, 0.074157715)
 material = SubResource("StandardMaterial3D_qktwf")
 
-[node name="Chair_Leg_2" type="CSGBox3D" parent="Chair" unique_id=1329941852]
+[node name="Chair_Leg_2" type="CSGBox3D" parent="HotelRoom/Chair" unique_id=1329941852]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -3.325605, 0.36290094, 3.9457011)
 use_collision = true
 size = Vector3(0.9147461, 0.07290039, 0.074157715)
 material = SubResource("StandardMaterial3D_qktwf")
 
-[node name="Chair_Leg_3" type="CSGBox3D" parent="Chair" unique_id=1485632246]
+[node name="Chair_Leg_3" type="CSGBox3D" parent="HotelRoom/Chair" unique_id=1485632246]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -4.249075, 0.36290094, 3.9457011)
 use_collision = true
 size = Vector3(0.9147461, 0.07290039, 0.074157715)
 material = SubResource("StandardMaterial3D_qktwf")
 
-[node name="Chair_Leg_4" type="CSGBox3D" parent="Chair" unique_id=340257499]
+[node name="Chair_Leg_4" type="CSGBox3D" parent="HotelRoom/Chair" unique_id=340257499]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -4.249075, 0.36290094, 3.0278578)
 use_collision = true
 size = Vector3(0.9147461, 0.07290039, 0.074157715)
 material = SubResource("StandardMaterial3D_qktwf")
 
-[node name="Phone_base" type="CSGBox3D" parent="." unique_id=1862704767]
+[node name="Phone_base" type="CSGBox3D" parent="HotelRoom" unique_id=1862704767]
 transform = Transform3D(1, 0, 0, 0, 0.6907468, 0, 0, 0, 1, 2.1978436, 1.1558328, 4.314439)
 use_collision = true
 size = Vector3(0.4491577, 0.15, 0.5234863)
 material = SubResource("StandardMaterial3D_w44yn")
 script = ExtResource("33_gggvi")
 
-[node name="Phone_Handset" type="CSGBox3D" parent="Phone_base" unique_id=193032974]
+[node name="Phone_Handset" type="CSGBox3D" parent="HotelRoom/Phone_base" unique_id=193032974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.063598156, 0.11846566, 0)
 size = Vector3(0.12792969, 0.095703125, 0.38378906)
 material = SubResource("StandardMaterial3D_gggvi")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Phone_base" unique_id=1486329062]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="HotelRoom/Phone_base" unique_id=1486329062]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14165092, 0.11846566, -0.183352)
 radius = 0.01
 material = SubResource("StandardMaterial3D_f3fvg")
 
-[node name="Vent" type="CSGBox3D" parent="." unique_id=390837576]
+[node name="Vent" type="CSGBox3D" parent="HotelRoom" unique_id=390837576]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9651418, 3.960794, -4.892796)
 use_collision = true
 size = Vector3(1, 1, 0.02)
 material = SubResource("StandardMaterial3D_hldgp")
 script = ExtResource("41_8u370")
 
-[node name="SafeWalls" type="Node3D" parent="." unique_id=1348538616]
+[node name="SafeWalls" type="Node3D" parent="HotelRoom" unique_id=1348538616]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20521891, 0)
 
-[node name="Safe_wall" type="CSGBox3D" parent="SafeWalls" unique_id=1370758004]
+[node name="Safe_wall" type="CSGBox3D" parent="HotelRoom/SafeWalls" unique_id=1370758004]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9882934, 2.6290083, -5.0334506)
 size = Vector3(0.02, 0.4395, 0.2763672)
 material = SubResource("StandardMaterial3D_7l6nd")
 
-[node name="Safe_wall2" type="CSGBox3D" parent="SafeWalls" unique_id=92367746]
+[node name="Safe_wall2" type="CSGBox3D" parent="HotelRoom/SafeWalls" unique_id=92367746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6878963, 2.6290083, -5.0423527)
 size = Vector3(0.02, 0.4395, 0.2763672)
 material = SubResource("StandardMaterial3D_6plg3")
 
-[node name="Safe_wall3" type="CSGBox3D" parent="SafeWalls" unique_id=364628866]
+[node name="Safe_wall3" type="CSGBox3D" parent="HotelRoom/SafeWalls" unique_id=364628866]
 transform = Transform3D(-0.006394813, 0, -0.5999959, 0, 0.6, 0, 0.997415, 0, -0.0038468055, -3.3342485, 2.6278007, -5.1827354)
 use_collision = true
 size = Vector3(0.015893556, 0.73132324, 1.1858155)
 material = SubResource("StandardMaterial3D_6ew4j")
 
-[node name="Safe_wall4" type="CSGBox3D" parent="SafeWalls" unique_id=1283892985]
+[node name="Safe_wall4" type="CSGBox3D" parent="HotelRoom/SafeWalls" unique_id=1283892985]
 transform = Transform3D(-0.006394813, 0, -0.5999959, 0, 0.6, 0, 0.997415, 0, -0.0038468055, -3.3382215, 2.8365138, -5.046097)
 use_collision = true
 size = Vector3(0.29580078, 0.026245117, 1.2)
 material = SubResource("StandardMaterial3D_l5bbr")
 
-[node name="Safe_wall5" type="CSGBox3D" parent="SafeWalls" unique_id=906246119]
+[node name="Safe_wall5" type="CSGBox3D" parent="HotelRoom/SafeWalls" unique_id=906246119]
 transform = Transform3D(-0.006394813, 0, -0.5999959, 0, 0.6, 0, 0.997415, 0, -0.0038468055, -3.3382215, 2.4191089, -5.042482)
 use_collision = true
 size = Vector3(0.29580078, 0.026245117, 1.2)
 material = SubResource("StandardMaterial3D_we2e5")
 
-[node name="Hallway_Wall1" type="CSGBox3D" parent="." unique_id=575569222]
+[node name="HotelHallway" type="Node3D" parent="." unique_id=140769985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.762479, 0, 0)
+
+[node name="Hallway_Ceiling1" type="CSGBox3D" parent="HotelHallway" unique_id=701833267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, -1)
+use_collision = true
+size = Vector3(20, 0.2, 10)
+material = SubResource("StandardMaterial3D_fj7yv")
+
+[node name="Hallway_Wall1" type="CSGBox3D" parent="HotelHallway" unique_id=575569222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.136936, 2.5, 2)
 use_collision = true
-size = Vector3(10, 5, 0.2)
+size = Vector3(20, 5, 0.2)
 material = SubResource("StandardMaterial3D_aqk2v")
 
-[node name="Hallway_Wall2" type="CSGBox3D" parent="." unique_id=720335459]
+[node name="Hallway_Wall2" type="CSGBox3D" parent="HotelHallway" unique_id=720335459]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.136936, 2.5, -6)
 use_collision = true
-size = Vector3(10, 5, 0.2)
+size = Vector3(20, 5, 0.2)
 material = SubResource("StandardMaterial3D_aqk2v")
 
-[node name="Hallway_Floor1" type="CSGBox3D" parent="." unique_id=1100963897]
+[node name="Hallway_Floor1" type="CSGBox3D" parent="HotelHallway" unique_id=1100963897]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.000863, 0, -2)
 use_collision = true
-size = Vector3(10.021973, 0.2, 10)
+size = Vector3(20, 0.2, 10)
 material = SubResource("StandardMaterial3D_f3sb7")
+
+[node name="Hallway_light1" type="CSGSphere3D" parent="HotelHallway" unique_id=1216956053]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.621374, 5.1170325, -1.9198532)
+material = SubResource("StandardMaterial3D_hi6a0")
+
+[node name="HallwayOmniLight3D" type="OmniLight3D" parent="HotelHallway/Hallway_light1" unique_id=1542631858]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023982048, -0.4016695, -0.0013918877)
+light_color = Color(0.99999994, 0.850634, 0.5968582, 1)
+light_energy = 2.5
+omni_range = 15.0

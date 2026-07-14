@@ -3,6 +3,10 @@ var is_open = false
 
 @onready var hinge = get_parent()
 
+func _ready():
+	%HallwayOmniLight3D.visible = false
+	%Hallway_light1.material.emission_enabled = false
+
 func interact():
 	var player = get_tree().get_first_node_in_group("player")
 	
@@ -16,4 +20,29 @@ func interact():
 	
 	var tween = create_tween()
 	tween.tween_property(hinge, "rotation:y", deg_to_rad(-100), 1.5)
-	#player.show_message("The door creaks open.")
+	
+	# Flicker the hallway light on/off twice, then settle on
+	tween.parallel().tween_callback(func():
+		%HallwayOmniLight3D.visible = true
+		%Hallway_light1.material.emission_enabled = true
+	)
+	tween.tween_interval(0.1)
+	tween.tween_callback(func():
+		%HallwayOmniLight3D.visible = false
+		%Hallway_light1.material.emission_enabled = false
+	)
+	tween.tween_interval(0.08)
+	tween.tween_callback(func():
+		%HallwayOmniLight3D.visible = true
+		%Hallway_light1.material.emission_enabled = true
+	)
+	tween.tween_interval(0.1)
+	tween.tween_callback(func():
+		%HallwayOmniLight3D.visible = false
+		%Hallway_light1.material.emission_enabled = false
+	)
+	tween.tween_interval(0.12)
+	tween.tween_callback(func():
+		%HallwayOmniLight3D.visible = true
+		%Hallway_light1.material.emission_enabled = true
+	);
