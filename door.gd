@@ -15,5 +15,5 @@ func interact():
 	is_open = true
 	
 	var tween = create_tween()
-	tween.tween_property(hinge, "rotation:y", deg_to_rad(-100), 1.0)
-	player.show_message("The door creaks open.")
+	tween.tween_property(hinge, "rotation:y", deg_to_rad(-100), 1.5)
+	#player.show_message("The door creaks open.")

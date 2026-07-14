@@ -5,6 +5,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c5m2wsuxy236y" path="res://assets/models/revolver final.obj" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://4jcqe34ky2l6" path="res://assets/textures/Wood067_1K-JPG_Color.jpg" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://b62n6jr5qwn8a" path="res://assets/textures/Metal011_1K-JPG_Color.jpg" id="3_qlg0r"]
+[ext_resource type="FontFile" uid="uid://dr3psfpv3krsj" path="res://assets/fonts/IMFellEnglish-Regular.ttf" id="6_tuyoq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v8wql"]
 
@@ -105,9 +106,11 @@ offset_right = 45.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.81459373, 0, 0.034716327, 1)
 theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_tuyoq")
 theme_override_font_sizes/font_size = 48
-text = "GAME TITLE"
+text = "THE NOISE"
 
 [node name="FadeRect" type="ColorRect" parent="CanvasLayer" unique_id=1854462064]
 anchors_preset = 15
@@ -119,6 +122,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="GunPrompt" type="Label" parent="CanvasLayer" unique_id=401341409]
+visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
