@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://r6kchads0h4o" path="res://assets/textures/Carpet015_1K-JPG_Color.jpg" id="1_tlwt5"]
 [ext_resource type="AudioStream" uid="uid://dngmynsmesuvs" path="res://sounds/741439__brunoauzet__room-tone-ibis-hotel.mp3" id="1_yx0jh"]
 [ext_resource type="Texture2D" uid="uid://t4cfkjcl3rh7" path="res://assets/textures/PaintedPlaster017_1K-JPG_Color.jpg" id="2_pkg7o"]
+[ext_resource type="Texture2D" uid="uid://dbnen77ytg4m7" path="res://assets/textures/Wood017_1K-JPG_Color.jpg" id="4_6oujy"]
 [ext_resource type="Texture2D" uid="uid://b6xufqe58dj4j" path="res://assets/textures/rough_linen_diff_1k.jpg" id="5_036b0"]
 [ext_resource type="Texture2D" uid="uid://d1q3622j2d1i5" path="res://assets/textures/Fabric001_1K-JPG_Color.jpg" id="6_dwbse"]
 [ext_resource type="Texture2D" uid="uid://4jcqe34ky2l6" path="res://assets/textures/Wood067_1K-JPG_Color.jpg" id="6_pkg7o"]
@@ -71,12 +72,15 @@ albedo_texture = ExtResource("2_pkg7o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u370"]
 transparency = 1
+albedo_texture = ExtResource("4_6oujy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rga7q"]
 transparency = 1
+albedo_texture = ExtResource("4_6oujy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6oujy"]
 transparency = 1
+albedo_texture = ExtResource("4_6oujy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwbse"]
 albedo_texture = ExtResource("2_pkg7o")
@@ -107,6 +111,7 @@ albedo_texture = ExtResource("9_ioo17")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_whwke"]
 transparency = 1
+albedo_texture = ExtResource("4_6oujy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wukud"]
 albedo_texture = ExtResource("11_2o6r5")
@@ -1124,13 +1129,13 @@ size = Vector3(20, 0.2, 10)
 material = SubResource("StandardMaterial3D_fj7yv")
 
 [node name="Hallway_Wall1" type="CSGBox3D" parent="HotelHallway" unique_id=575569222]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.136936, 2.5, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.136936, 2.5, 1)
 use_collision = true
 size = Vector3(20, 5, 0.2)
 material = SubResource("StandardMaterial3D_aqk2v")
 
 [node name="Hallway_Wall2" type="CSGBox3D" parent="HotelHallway" unique_id=720335459]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.136936, 2.5, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.136936, 2.5, -5)
 use_collision = true
 size = Vector3(20, 5, 0.2)
 material = SubResource("StandardMaterial3D_aqk2v")
