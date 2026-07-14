@@ -651,7 +651,7 @@ size = Vector3(10, 0.2, 10)
 material = SubResource("StandardMaterial3D_fj7yv")
 
 [node name="Bed" type="Node3D" parent="." unique_id=98737330]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20521891, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101974964, 0)
 
 [node name="Bed_Pillow" type="CSGSphere3D" parent="Bed" unique_id=120760285]
 transform = Transform3D(1.2, 0, 0, 0, 0.3, 0, 0, 0, 0.6, 0, 0.9860647, 4.2403164)
@@ -678,7 +678,7 @@ size = Vector3(3.1875, 1.7485352, 0.2)
 material = SubResource("StandardMaterial3D_ic0uy")
 
 [node name="Lamp" type="Node3D" parent="." unique_id=115731457 groups=["lamp"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26644087, 0.20521891, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26644087, 0.1779089, 0)
 script = ExtResource("9_6ah6f")
 
 [node name="Lamp_Base" type="CSGCylinder3D" parent="Lamp" unique_id=1618276567]
@@ -775,19 +775,19 @@ radius = 0.07
 material = SubResource("StandardMaterial3D_k8iv3")
 
 [node name="Nightstand_R" type="CSGBox3D" parent="." unique_id=198563913]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2260005, 0.6295699, 4.391383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2260005, 0.6022599, 4.391383)
 use_collision = true
 size = Vector3(1.2, 1, 1.2)
 material = SubResource("StandardMaterial3D_k3n1d")
 
 [node name="Nightstand_L2" type="CSGBox3D" parent="." unique_id=1705797126]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2127473, 0.6295699, 4.391383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2127473, 0.6022599, 4.391383)
 use_collision = true
 size = Vector3(1.2, 1, 1.2)
 material = SubResource("StandardMaterial3D_k3n1d")
 
 [node name="Bible" type="CSGBox3D" parent="." unique_id=1006641102]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9998107, 1.2093289, 4.3405128)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9998107, 1.1820189, 4.3405128)
 use_collision = true
 size = Vector3(0.4, 0.15, 0.55)
 material = SubResource("StandardMaterial3D_wgpkr")
@@ -805,7 +805,7 @@ material = SubResource("StandardMaterial3D_o3ebs")
 stream = ExtResource("20_my276")
 
 [node name="Bible_Hollowed" type="CSGBox3D" parent="." unique_id=1420856839]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9998107, 1.2877587, 4.3405128)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9998107, 1.2604487, 4.3405128)
 material_override = SubResource("StandardMaterial3D_bh8nc")
 size = Vector3(0.4, 0.008471683, 0.55)
 material = SubResource("StandardMaterial3D_o3ebs")
@@ -877,7 +877,7 @@ surface_material_override/11 = SubResource("StandardMaterial3D_qhqgy")
 surface_material_override/12 = SubResource("StandardMaterial3D_qhqgy")
 
 [node name="Dresser" type="Node3D" parent="." unique_id=1264682867]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20521891, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10891974, 0)
 
 [node name="Dresser_Base" type="CSGBox3D" parent="Dresser" unique_id=516601387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9987483, -4.456111)
@@ -900,7 +900,7 @@ material = SubResource("StandardMaterial3D_v8wql")
 script = ExtResource("22_o3ebs")
 
 [node name="TV" type="Node3D" parent="." unique_id=316497267]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0619407, -4.4415827)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9656415, -4.4415827)
 
 [node name="TV_Frame" type="CSGBox3D" parent="TV" unique_id=1194068809]
 use_collision = true
@@ -960,7 +960,7 @@ size = Vector3(0.6, 1.4, 0.03)
 material = SubResource("StandardMaterial3D_il2jm")
 
 [node name="Desk" type="Node3D" parent="." unique_id=764500385]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20521891, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09628272, 0)
 
 [node name="Desk_Top" type="CSGBox3D" parent="Desk" unique_id=1376413626]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603446, 1.637697, 3.3545928)
@@ -993,7 +993,7 @@ size = Vector3(0.1, 1.63, 0.1)
 material = SubResource("StandardMaterial3D_k83mh")
 
 [node name="Chair" type="Node3D" parent="." unique_id=1404389750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20521891, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19209182, 0)
 
 [node name="Chair_Seat" type="CSGBox3D" parent="Chair" unique_id=1778513456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.78669, 0.8624364, 3.4898677)
@@ -1062,7 +1062,7 @@ size = Vector3(0.9147461, 0.07290039, 0.074157715)
 material = SubResource("StandardMaterial3D_qktwf")
 
 [node name="Phone_base" type="CSGBox3D" parent="." unique_id=1862704767]
-transform = Transform3D(1, 0, 0, 0, 0.6907468, 0, 0, 0, 1, 2.1978436, 1.1831428, 4.314439)
+transform = Transform3D(1, 0, 0, 0, 0.6907468, 0, 0, 0, 1, 2.1978436, 1.1558328, 4.314439)
 use_collision = true
 size = Vector3(0.4491577, 0.15, 0.5234863)
 material = SubResource("StandardMaterial3D_w44yn")

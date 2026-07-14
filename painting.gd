@@ -8,7 +8,7 @@ func interact():
 	if not is_open:
 		is_open = true
 		var tween = create_tween()
-		tween.tween_property(self, "position:y", position.y - 2.1, 0.8)
+		tween.tween_property(self, "position:y", position.y - 2.24, 0.8)
 		player.show_message("The painting slides down revealing a safe...")
 	else:
 		player.show_message("A safe is hidden behind the painting.")
