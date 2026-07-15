@@ -574,6 +574,9 @@ albedo_texture = ExtResource("4_6oujy")
 transparency = 1
 albedo_texture = ExtResource("4_6oujy")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frp3o"]
+albedo_texture = ExtResource("13_2o6r5")
+
 [node name="World" type="Node3D" unique_id=1620539426]
 
 [node name="AmbientAudio" type="AudioStreamPlayer" parent="." unique_id=1102422780]
@@ -801,6 +804,11 @@ script = ExtResource("12_qktwf")
 
 [node name="Doorknob" type="CSGSphere3D" parent="HotelRoom/Door_Hinge" unique_id=1455636969]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13984156, 0.024609208, 1.768616)
+radius = 0.07
+material = ExtResource("20_hi6a0")
+
+[node name="Doorknob2" type="CSGSphere3D" parent="HotelRoom/Door_Hinge" unique_id=1023891395]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13807535, 0.024609208, 1.768616)
 radius = 0.07
 material = ExtResource("20_hi6a0")
 
@@ -1245,6 +1253,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.494687, 1.768419, -1.288495
 radius = 0.07
 material = ExtResource("20_hi6a0")
 
+[node name="Doorknob3" type="CSGSphere3D" parent="HotelHallway/Hallway_Door1" unique_id=654282517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.494687, 1.768419, -1.2884953)
+radius = 0.07
+material = ExtResource("20_hi6a0")
+
 [node name="Door_Frame4" type="CSGBox3D" parent="HotelHallway/Hallway_Door1" unique_id=2108390086]
 transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.4076182, -3.3817372e-08, 9.600068, 1.7460674, -1.0400289)
 size = Vector3(0.1, 0.15, 4.0665283)
@@ -1288,3 +1301,14 @@ material = SubResource("StandardMaterial3D_3l05q")
 transform = Transform3D(2.5656726, 0, 0, 0, 0.54218006, -7.1054274e-15, 0, 1.7763568e-15, 0.6769448, 9.595475, 3.5375657, -2.0492697)
 size = Vector3(0.1, 0.18937989, 3.03656)
 material = SubResource("StandardMaterial3D_x28ej")
+
+[node name="Room 110" type="CSGBox3D" parent="." unique_id=779301040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1503067, 2.2882152, -0.5570167)
+size = Vector3(0.001, 0.30786133, 0.5427246)
+material = SubResource("StandardMaterial3D_frp3o")
+
+[node name="Label3D" type="Label3D" parent="Room 110" unique_id=87987757]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.025513172, 0, 0)
+text = "110
+
+"
