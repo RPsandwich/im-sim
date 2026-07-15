@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://bruw6nxe656dk" path="res://assets/textures/safe.jpg" id="18_bc84e"]
 [ext_resource type="Texture2D" uid="uid://b553y3p7o6tyw" path="res://assets/textures/163049.jpg" id="19_bh8nc"]
 [ext_resource type="Script" uid="uid://c7020bs8ffqdc" path="res://safe.gd" id="19_wukud"]
+[ext_resource type="Material" uid="uid://dbex5b1b0ywgk" path="res://assets/doorknob.tres" id="20_hi6a0"]
 [ext_resource type="AudioStream" uid="uid://dxrr8lucp6144" path="res://sounds/614081__mateusboga__opening-a-book.wav" id="20_my276"]
 [ext_resource type="Texture2D" uid="uid://dyciqd0topl11" path="res://assets/textures/no-signal-tv-screen-with-noise-julien.jpg" id="21_wjb0r"]
 [ext_resource type="Script" uid="uid://dxgbtrnwix0nm" path="res://tv_screen.gd" id="22_bo7i5"]
@@ -129,11 +130,6 @@ albedo_texture = ExtResource("9_ioo17")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kq25h"]
 albedo_texture = ExtResource("6_pkg7o")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8iv3"]
-albedo_texture = ExtResource("9_ioo17")
-metallic = 1.0
-roughness = 0.72
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3n1d"]
 albedo_texture = ExtResource("6_pkg7o")
@@ -460,7 +456,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tcv7r")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqkch"]
-albedo_color = Color(0.49747366, 0.49747366, 0.49747366, 1)
+albedo_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 albedo_texture = ExtResource("9_ioo17")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smehm"]
@@ -548,6 +544,35 @@ albedo_texture = ExtResource("6_dwbse")
 emission_enabled = true
 emission = Color(1, 1, 0.7490196, 1)
 emission_energy_multiplier = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo1xk"]
+transparency = 1
+albedo_texture = ExtResource("6_dwbse")
+emission_enabled = true
+emission = Color(1, 1, 0.7490196, 1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18clu"]
+transparency = 1
+albedo_texture = ExtResource("6_dwbse")
+emission_enabled = true
+emission = Color(1, 1, 0.7490196, 1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wdv8"]
+albedo_texture = ExtResource("6_pkg7o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d46x8"]
+transparency = 1
+albedo_texture = ExtResource("4_6oujy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3l05q"]
+transparency = 1
+albedo_texture = ExtResource("4_6oujy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x28ej"]
+transparency = 1
+albedo_texture = ExtResource("4_6oujy")
 
 [node name="World" type="Node3D" unique_id=1620539426]
 
@@ -777,7 +802,7 @@ script = ExtResource("12_qktwf")
 [node name="Doorknob" type="CSGSphere3D" parent="HotelRoom/Door_Hinge" unique_id=1455636969]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13984156, 0.024609208, 1.768616)
 radius = 0.07
-material = SubResource("StandardMaterial3D_k8iv3")
+material = ExtResource("20_hi6a0")
 
 [node name="Nightstand_R" type="CSGBox3D" parent="HotelRoom" unique_id=198563913]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2260005, 0.6022599, 4.391383)
@@ -1130,8 +1155,20 @@ use_collision = true
 size = Vector3(20, 0.2, 10)
 material = SubResource("StandardMaterial3D_fj7yv")
 
+[node name="Hallway_Ceiling2" type="CSGBox3D" parent="HotelHallway" unique_id=1621331749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, -1)
+use_collision = true
+size = Vector3(20, 0.2, 10)
+material = SubResource("StandardMaterial3D_fj7yv")
+
 [node name="Hallway_Wall1" type="CSGBox3D" parent="HotelHallway" unique_id=575569222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.136936, 2.5, 1)
+use_collision = true
+size = Vector3(20, 5, 0.2)
+material = SubResource("StandardMaterial3D_aqk2v")
+
+[node name="Hallway_Wall3" type="CSGBox3D" parent="HotelHallway" unique_id=826042876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.136936, 2.5, 1)
 use_collision = true
 size = Vector3(20, 5, 0.2)
 material = SubResource("StandardMaterial3D_aqk2v")
@@ -1142,8 +1179,20 @@ use_collision = true
 size = Vector3(20, 5, 0.2)
 material = SubResource("StandardMaterial3D_aqk2v")
 
+[node name="Hallway_Wall4" type="CSGBox3D" parent="HotelHallway" unique_id=1462286782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.136936, 2.5, -5)
+use_collision = true
+size = Vector3(20, 5, 0.2)
+material = SubResource("StandardMaterial3D_aqk2v")
+
 [node name="Hallway_Floor1" type="CSGBox3D" parent="HotelHallway" unique_id=1100963897]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.000863, 0, -2)
+use_collision = true
+size = Vector3(20, 0.2, 10)
+material = SubResource("StandardMaterial3D_f3sb7")
+
+[node name="Hallway_Floor2" type="CSGBox3D" parent="HotelHallway" unique_id=793768042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.000866, 0, -2)
 use_collision = true
 size = Vector3(20, 0.2, 10)
 material = SubResource("StandardMaterial3D_f3sb7")
@@ -1159,3 +1208,83 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023982048, -0.4016695, -0.
 light_color = Color(0.99999994, 0.850634, 0.5968582, 1)
 light_energy = 2.5
 omni_range = 15.0
+
+[node name="Hallway_light2" type="CSGSphere3D" parent="HotelHallway" unique_id=896149407]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.621375, 5.1170325, -1.9198532)
+material = SubResource("StandardMaterial3D_eo1xk")
+
+[node name="HallwayOmniLight3D2" type="OmniLight3D" parent="HotelHallway/Hallway_light2" unique_id=1266274783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023982048, -0.4016695, -0.0013918877)
+light_color = Color(0.99999994, 0.850634, 0.5968582, 1)
+light_energy = 2.5
+omni_range = 15.0
+
+[node name="Hallway_light3" type="CSGSphere3D" parent="HotelHallway" unique_id=1082820927]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.621376, 5.1170325, -1.9198532)
+material = SubResource("StandardMaterial3D_18clu")
+
+[node name="HallwayOmniLight3D3" type="OmniLight3D" parent="HotelHallway/Hallway_light3" unique_id=1766972861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023982048, -0.4016695, -0.0013918877)
+light_color = Color(0.99999994, 0.850634, 0.5968582, 1)
+light_energy = 2.5
+omni_range = 15.0
+
+[node name="Hallway_Door1" type="Node3D" parent="HotelHallway" unique_id=1811378461]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.916462, 0, -8.689598)
+
+[node name="Door2" type="CSGBox3D" parent="HotelHallway/Hallway_Door1" unique_id=1572589353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.634528, 1.7438098, -2.0623744)
+use_collision = true
+size = Vector3(0.15, 3.4721375, 1.9665039)
+material = SubResource("StandardMaterial3D_4wdv8")
+
+[node name="Doorknob2" type="CSGSphere3D" parent="HotelHallway/Hallway_Door1" unique_id=507883702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.494687, 1.768419, -1.2884953)
+radius = 0.07
+material = ExtResource("20_hi6a0")
+
+[node name="Door_Frame4" type="CSGBox3D" parent="HotelHallway/Hallway_Door1" unique_id=2108390086]
+transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.4076182, -3.3817372e-08, 9.600068, 1.7460674, -1.0400289)
+size = Vector3(0.1, 0.15, 4.0665283)
+material = SubResource("StandardMaterial3D_d46x8")
+
+[node name="Door_Frame5" type="CSGBox3D" parent="HotelHallway/Hallway_Door1" unique_id=1996836260]
+transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.4076182, -3.3817372e-08, 9.589301, 1.7512884, -3.0563939)
+size = Vector3(0.1, 0.15, 4.078125)
+material = SubResource("StandardMaterial3D_3l05q")
+
+[node name="Door_Frame6" type="CSGBox3D" parent="HotelHallway/Hallway_Door1" unique_id=1393174922]
+transform = Transform3D(2.5656726, 0, 0, 0, 0.54218006, -7.1054274e-15, 0, 1.7763568e-15, 0.6769448, 9.595475, 3.5375657, -2.0492697)
+size = Vector3(0.1, 0.18937989, 3.03656)
+material = SubResource("StandardMaterial3D_x28ej")
+
+[node name="Hallway_Door2" type="Node3D" parent="HotelHallway" unique_id=186087918]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 6.270996, 0, 4.6816435)
+
+[node name="Door2" type="CSGBox3D" parent="HotelHallway/Hallway_Door2" unique_id=1287499692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.634528, 1.7438098, -2.0623744)
+use_collision = true
+size = Vector3(0.15, 3.4721375, 1.9665039)
+material = SubResource("StandardMaterial3D_4wdv8")
+
+[node name="Doorknob2" type="CSGSphere3D" parent="HotelHallway/Hallway_Door2" unique_id=897074786]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.494687, 1.768419, -1.2884953)
+radius = 0.07
+material = ExtResource("20_hi6a0")
+
+[node name="Door_Frame4" type="CSGBox3D" parent="HotelHallway/Hallway_Door2" unique_id=1893958670]
+transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.4076182, -3.3817372e-08, 9.600068, 1.7460674, -1.0400289)
+size = Vector3(0.1, 0.15, 4.0665283)
+material = SubResource("StandardMaterial3D_d46x8")
+
+[node name="Door_Frame5" type="CSGBox3D" parent="HotelHallway/Hallway_Door2" unique_id=1657705157]
+transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.4076182, -3.3817372e-08, 9.589301, 1.7512884, -3.0563939)
+size = Vector3(0.1, 0.15, 4.078125)
+material = SubResource("StandardMaterial3D_3l05q")
+
+[node name="Door_Frame6" type="CSGBox3D" parent="HotelHallway/Hallway_Door2" unique_id=629691166]
+transform = Transform3D(2.5656726, 0, 0, 0, 0.54218006, -7.1054274e-15, 0, 1.7763568e-15, 0.6769448, 9.595475, 3.5375657, -2.0492697)
+size = Vector3(0.1, 0.18937989, 3.03656)
+material = SubResource("StandardMaterial3D_x28ej")

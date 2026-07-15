@@ -10,7 +10,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v8wql"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqkch"]
-albedo_color = Color(0.49747366, 0.49747366, 0.49747366, 1)
+albedo_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
 albedo_texture = ExtResource("3_qlg0r")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smehm"]
