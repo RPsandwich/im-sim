@@ -1302,13 +1302,43 @@ transform = Transform3D(2.5656726, 0, 0, 0, 0.54218006, -7.1054274e-15, 0, 1.776
 size = Vector3(0.1, 0.18937989, 3.03656)
 material = SubResource("StandardMaterial3D_x28ej")
 
-[node name="Room 110" type="CSGBox3D" parent="." unique_id=779301040]
+[node name="Room_Plate110" type="CSGBox3D" parent="." unique_id=779301040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1503067, 2.2882152, -0.5570167)
 size = Vector3(0.001, 0.30786133, 0.5427246)
 material = SubResource("StandardMaterial3D_frp3o")
 
-[node name="Label3D" type="Label3D" parent="Room 110" unique_id=87987757]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.025513172, 0, 0)
+[node name="110" type="Label3D" parent="Room_Plate110" unique_id=87987757]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.0013842583, 0, 0)
 text = "110
 
 "
+outline_size = 7
+
+[node name="Room_Plate108" type="CSGBox3D" parent="." unique_id=2051824866]
+transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, 10.162701, 2.2882152, 0.89776534)
+size = Vector3(0.001, 0.30786133, 0.5427246)
+material = SubResource("StandardMaterial3D_frp3o")
+
+[node name="108" type="Label3D" parent="Room_Plate108" unique_id=330420343]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.0013842583, 0, 0)
+text = "108
+
+
+
+"
+outline_size = 7
+
+[node name="Room_Plate109" type="CSGBox3D" parent="." unique_id=957663898]
+transform = Transform3D(-1.172251e-07, 0, -1, 0, 1, 0, 1, 0, -1.172251e-07, 10.49906, 2.2882152, -4.894903)
+size = Vector3(0.001, 0.30786133, 0.5427246)
+material = SubResource("StandardMaterial3D_frp3o")
+
+[node name="109" type="Label3D" parent="Room_Plate109" unique_id=2085798241]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.0013842583, 0, 0)
+text = "109
+
+
+
+
+"
+outline_size = 7
