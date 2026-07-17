@@ -21,6 +21,9 @@ var lying_y = -.05
 @onready var gun_prompt = $CanvasLayer/GunPrompt
 var gun_drawn = false
 var gun_prompt_seen = false
+var gun_rest_position: Vector3
+var gun_holster_offset = Vector3(0, -0.4, 0.2)
+var gun_tween: Tween
 
 
 func add_item(item_name: String):
@@ -37,6 +40,9 @@ func _ready():
 	title_card.modulate.a = 0.0
 	head.rotation.x = deg_to_rad(89)
 	position.y = lying_y
+	gun_rest_position = gun_viewmodel.position
+	gun_viewmodel.position = gun_rest_position + gun_holster_offset
+	gun_viewmodel.visible = false
 	if skip_intro:
 		fade_rect.modulate.a = 0.0
 		intro_playing = false
@@ -79,8 +85,19 @@ func _unhandled_input(event):
 			collider.interact()
 	if event.is_action_pressed("draw_gun") and has_item("gun"):
 		gun_drawn = !gun_drawn
-		gun_viewmodel.visible = gun_drawn
 		gun_prompt_seen = true
+		toggle_gun(gun_drawn)
+
+func toggle_gun(drawn: bool):
+	if gun_tween:
+		gun_tween.kill()
+	gun_tween = create_tween()
+	if drawn:
+		gun_viewmodel.visible = true
+		gun_tween.tween_property(gun_viewmodel, "position", gun_rest_position, 0.3).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	else:
+		gun_tween.tween_property(gun_viewmodel, "position", gun_rest_position + gun_holster_offset, 0.3).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+		gun_tween.tween_callback(func(): gun_viewmodel.visible = false)
 
 func _physics_process(delta):
 	if intro_playing:

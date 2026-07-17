@@ -1,6 +1,6 @@
 extends CSGBox3D
 var is_open = false
-
+var has_flickered = false
 @onready var hinge = get_parent()
 
 func _ready():
@@ -15,34 +15,45 @@ func interact():
 		return
 	
 	if is_open:
-		return
+		close_door()
+	else:
+		open_door()
+
+func open_door():
 	is_open = true
 	
 	var tween = create_tween()
 	tween.tween_property(hinge, "rotation:y", deg_to_rad(-100), 1.5)
 	
-	# Flicker the hallway light on/off twice, then settle on
-	tween.parallel().tween_callback(func():
-		%HallwayOmniLight3D.visible = true
-		%Hallway_light1.material.emission_enabled = true
-	)
-	tween.tween_interval(0.1)
-	tween.tween_callback(func():
-		%HallwayOmniLight3D.visible = false
-		%Hallway_light1.material.emission_enabled = false
-	)
-	tween.tween_interval(0.08)
-	tween.tween_callback(func():
-		%HallwayOmniLight3D.visible = true
-		%Hallway_light1.material.emission_enabled = true
-	)
-	tween.tween_interval(0.1)
-	tween.tween_callback(func():
-		%HallwayOmniLight3D.visible = false
-		%Hallway_light1.material.emission_enabled = false
-	)
-	tween.tween_interval(0.12)
-	tween.tween_callback(func():
-		%HallwayOmniLight3D.visible = true
-		%Hallway_light1.material.emission_enabled = true
-	);
+	if not has_flickered:
+		has_flickered = true
+		# Flicker the hallway light on/off twice, then settle on
+		tween.parallel().tween_callback(func():
+			%HallwayOmniLight3D.visible = true
+			%Hallway_light1.material.emission_enabled = true
+		)
+		tween.tween_interval(0.1)
+		tween.tween_callback(func():
+			%HallwayOmniLight3D.visible = false
+			%Hallway_light1.material.emission_enabled = false
+		)
+		tween.tween_interval(0.08)
+		tween.tween_callback(func():
+			%HallwayOmniLight3D.visible = true
+			%Hallway_light1.material.emission_enabled = true
+		)
+		tween.tween_interval(0.1)
+		tween.tween_callback(func():
+			%HallwayOmniLight3D.visible = false
+			%Hallway_light1.material.emission_enabled = false
+		)
+		tween.tween_interval(0.12)
+		tween.tween_callback(func():
+			%HallwayOmniLight3D.visible = true
+			%Hallway_light1.material.emission_enabled = true
+		)
+
+func close_door():
+	is_open = false
+	var tween = create_tween()
+	tween.tween_property(hinge, "rotation:y", 0.0, 1.5)

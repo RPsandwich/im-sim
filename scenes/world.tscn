@@ -62,13 +62,16 @@ ambient_light_source = 2
 ambient_light_color = Color(0.18359056, 0.18359041, 0.18359044, 1)
 ambient_light_energy = 0.2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlwt5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1jxku"]
 albedo_texture = ExtResource("2_pkg7o")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1dgkn"]
 albedo_texture = ExtResource("2_pkg7o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_036b0"]
+albedo_texture = ExtResource("2_pkg7o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e68xj"]
 albedo_texture = ExtResource("2_pkg7o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u370"]
@@ -83,7 +86,13 @@ albedo_texture = ExtResource("4_6oujy")
 transparency = 1
 albedo_texture = ExtResource("4_6oujy")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwbse"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5hglh"]
+albedo_texture = ExtResource("2_pkg7o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qg546"]
+albedo_texture = ExtResource("2_pkg7o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pf35h"]
 albedo_texture = ExtResource("2_pkg7o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
@@ -538,6 +547,9 @@ albedo_texture = ExtResource("11_k3n1d")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_we2e5"]
 albedo_texture = ExtResource("11_k3n1d")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
+albedo_texture = ExtResource("2_pkg7o")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hi6a0"]
 transparency = 1
 albedo_texture = ExtResource("6_dwbse")
@@ -597,7 +609,6 @@ environment = SubResource("Environment_f3sb7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -5)
 use_collision = true
 size = Vector3(10, 5, 0.2)
-material = SubResource("StandardMaterial3D_tlwt5")
 
 [node name="Wall_SafeCutout" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_North" unique_id=1281521409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3542984, 0.33614445, -0.037858486)
@@ -608,7 +619,7 @@ size = Vector3(0.73115236, 0.42226562, 0.28635255)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 5)
 use_collision = true
 size = Vector3(10, 5, 0.2)
-material = SubResource("StandardMaterial3D_aqk2v")
+material = SubResource("StandardMaterial3D_1jxku")
 
 [node name="Wall_East" type="Node3D" parent="HotelRoom/Room_Shell" unique_id=1295580296]
 
@@ -616,7 +627,7 @@ material = SubResource("StandardMaterial3D_aqk2v")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, 1.9411712)
 use_collision = true
 size = Vector3(0.2, 5, 6)
-material = SubResource("StandardMaterial3D_036b0")
+material = SubResource("StandardMaterial3D_1dgkn")
 
 [node name="Wall_East_SmallBig2" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_East" unique_id=588012576]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2.5, -4.558829)
@@ -628,7 +639,7 @@ material = SubResource("StandardMaterial3D_036b0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4.2460327, -2.0628266)
 use_collision = true
 size = Vector3(0.2, 1.5079346, 2.140564)
-material = SubResource("StandardMaterial3D_036b0")
+material = SubResource("StandardMaterial3D_e68xj")
 
 [node name="Door_Frame1" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_East" unique_id=358309497]
 transform = Transform3D(2.5656726, 0, 0, 0, -2.0737012e-08, 0.9004161, 0, -0.4076182, -3.3817372e-08, 5.007338, 1.7460674, -1.0400289)
@@ -651,25 +662,24 @@ material = SubResource("StandardMaterial3D_6oujy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.39999998, -5, 2.5, 3.2608397)
 use_collision = true
 size = Vector3(0.2, 5, 8.695801)
-material = SubResource("StandardMaterial3D_dwbse")
+material = SubResource("StandardMaterial3D_5hglh")
 
 [node name="Wall_West2" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_West" unique_id=380533317]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.39999998, -5, 2.5, -3.280902)
 use_collision = true
 size = Vector3(0.2, 5, 8.5954895)
-material = SubResource("StandardMaterial3D_dwbse")
 
 [node name="Wall_West3" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_West" unique_id=1119237824]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.39999998, -5, 1.0053711, 0.014550867)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.39999998, -5, 1.0053711, 0.0014893413)
 use_collision = true
-size = Vector3(0.2, 2.0107422, 11.233887)
-material = SubResource("StandardMaterial3D_dwbse")
+size = Vector3(0.2, 2.0107422, 8.816528)
+material = SubResource("StandardMaterial3D_qg546")
 
 [node name="Wall_West4" type="CSGBox3D" parent="HotelRoom/Room_Shell/Wall_West" unique_id=1969519530]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.39999998, -5.0019956, 4.3354735, 0.027634371)
 use_collision = true
 size = Vector3(0.2, 1.3178711, 11.437134)
-material = SubResource("StandardMaterial3D_dwbse")
+material = SubResource("StandardMaterial3D_pf35h")
 
 [node name="Floor" type="CSGBox3D" parent="HotelRoom/Room_Shell" unique_id=1955923559]
 use_collision = true
@@ -1170,25 +1180,25 @@ size = Vector3(20, 0.2, 10)
 material = SubResource("StandardMaterial3D_fj7yv")
 
 [node name="Hallway_Wall1" type="CSGBox3D" parent="HotelHallway" unique_id=575569222]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.136936, 2.5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.237566, 2.5, 1)
 use_collision = true
 size = Vector3(20, 5, 0.2)
 material = SubResource("StandardMaterial3D_aqk2v")
 
 [node name="Hallway_Wall3" type="CSGBox3D" parent="HotelHallway" unique_id=826042876]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.136936, 2.5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.237568, 2.5, 1)
 use_collision = true
 size = Vector3(20, 5, 0.2)
 material = SubResource("StandardMaterial3D_aqk2v")
 
 [node name="Hallway_Wall2" type="CSGBox3D" parent="HotelHallway" unique_id=720335459]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.136936, 2.5, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.237566, 2.5, -5)
 use_collision = true
 size = Vector3(20, 5, 0.2)
 material = SubResource("StandardMaterial3D_aqk2v")
 
 [node name="Hallway_Wall4" type="CSGBox3D" parent="HotelHallway" unique_id=1462286782]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.136936, 2.5, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.237568, 2.5, -5)
 use_collision = true
 size = Vector3(20, 5, 0.2)
 material = SubResource("StandardMaterial3D_aqk2v")
@@ -1207,7 +1217,7 @@ material = SubResource("StandardMaterial3D_f3sb7")
 
 [node name="Hallway_light1" type="CSGSphere3D" parent="HotelHallway" unique_id=1216956053]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.621374, 5.1170325, -1.9198532)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.621374, 5.1170325, -1.9198532)
 material = SubResource("StandardMaterial3D_hi6a0")
 
 [node name="HallwayOmniLight3D" type="OmniLight3D" parent="HotelHallway/Hallway_light1" unique_id=1542631858]
@@ -1220,6 +1230,7 @@ omni_range = 15.0
 [node name="Hallway_light2" type="CSGSphere3D" parent="HotelHallway" unique_id=896149407]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.621375, 5.1170325, -1.9198532)
+visible = false
 material = SubResource("StandardMaterial3D_eo1xk")
 
 [node name="HallwayOmniLight3D2" type="OmniLight3D" parent="HotelHallway/Hallway_light2" unique_id=1266274783]
